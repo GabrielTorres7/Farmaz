@@ -5,11 +5,13 @@
  */
 package br.cefetmg.farmaz.util;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Gabriel
  */
-public class PacoteDados {
+public class PacoteDados implements Serializable{
     
     private String requisicao;
     private Object objeto;

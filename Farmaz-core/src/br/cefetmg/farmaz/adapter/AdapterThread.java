@@ -64,13 +64,17 @@ public class AdapterThread implements Runnable {
 
         ManterCliente manterCliente = new ManterClienteImpl(ClienteDAOImpl.getInstance());
 
-        if (requisicao.equals("CadastrarCliente")) {
-            cliente = (Cliente) pacoteDados.getObjeto();
-            clienteId = manterCliente.cadastrarCliente(cliente);
+        switch (requisicao) {
+            case "CadastrarCliente":
+                cliente = (Cliente) pacoteDados.getObjeto();
+                clienteId = manterCliente.cadastrarCliente(cliente);
 
-            pacoteResposta = new PacoteDados("T", clienteId);
+                pacoteResposta = new PacoteDados("T", clienteId);
 
-            Servidor.enviarDados(IPAddress, clientPort, pacoteResposta);
+                Servidor.enviarDados(IPAddress, clientPort, pacoteResposta);
+                break;
+            case "AtualizarCliente":
+                break;
         }
 
     }

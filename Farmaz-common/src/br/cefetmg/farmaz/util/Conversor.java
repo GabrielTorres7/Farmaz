@@ -18,41 +18,29 @@ import java.io.ObjectOutputStream;
 public class Conversor {
     
     public static byte[] toByteArray(Object obj) throws IOException{
-        byte[] bytes = null;
-        ByteArrayOutputStream bos = null;
-        ObjectOutputStream oos = null;
-        try{
-            bos = new ByteArrayOutputStream();
-            oos = new ObjectOutputStream(bos);
-            oos.flush();
-            bytes = bos.toByteArray();
-        } finally{
-            if (oos != null){
-                oos.close();
-            }
-            if (bos != null){
-                bos.close();
-            }
-        }
-        return bytes;
+        byte[] b = null;
+                
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        ObjectOutputStream os = new ObjectOutputStream(out);
+        os.writeObject(obj);
+        b = out.toByteArray();
+        
+        out.close();
+        os.close();
+        
+        return b;
     }
     
     public static Object toObject(byte[] bytes) throws IOException, ClassNotFoundException{
         Object obj = null;
-        ByteArrayInputStream bis = null;
-        ObjectInputStream ois = null;
-        try{
-            bis = new ByteArrayInputStream(bytes);
-            ois = new ObjectInputStream(bis);
-            obj = ois.readObject();
-        } finally{
-            if (bis != null){
-                bis.close();
-            }
-            if (ois != null){
-                ois.close();
-            }
-        }
+        
+        ByteArrayInputStream in = new ByteArrayInputStream(bytes);
+        ObjectInputStream is = new ObjectInputStream(in);
+        obj = is.readObject();
+        
+        in.close();
+        is.close();
+        
         return obj;
     }
 }

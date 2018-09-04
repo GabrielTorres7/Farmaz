@@ -21,7 +21,7 @@ import java.net.SocketException;
  * @author Gabriel
  */
 public class Servidor {
-    
+
     private static DatagramSocket servidorSocket;
     private static final int port = 4445;
 
@@ -33,19 +33,19 @@ public class Servidor {
     }
 
     private static synchronized void receberDados() throws IOException, PersistenciaException, LogicaNegocioException, ClassNotFoundException {
-        
+
         final int BYTE_LENGTH = 1024;
         byte[] dadosRecebidos = new byte[BYTE_LENGTH];
-       
+
         PacoteDados pacoteDados;
 
         //espera ate que algum cliente envie uma requisicao
         DatagramPacket receivePacket = new DatagramPacket(dadosRecebidos,
                 dadosRecebidos.length);
         servidorSocket.receive(receivePacket);
-        
+
         pacoteDados = (PacoteDados) Conversor.toObject(receivePacket.getData());
-                
+
         InetAddress IPAddress = receivePacket.getAddress();
         int clientPort = receivePacket.getPort();
 
@@ -56,17 +56,18 @@ public class Servidor {
         adapterThread.start();
     }
 
-    public static synchronized void enviarDados(InetAddress IPAddress, int clientPort, PacoteDados pacoteResposta) throws IOException {
-        
+    public static void enviarDados(InetAddress IPAddress, int clientPort, PacoteDados pacoteResposta) throws IOException {
+
         byte[] enviarDados;
 
         //transforma o objeto resposta em vetor de bytes para transmissao
         enviarDados = Conversor.toByteArray(pacoteResposta);
-
+        
         //envia a resposta ao cliente
         DatagramPacket sendPacket = new DatagramPacket(enviarDados,
                 enviarDados.length, IPAddress, clientPort);
         servidorSocket.send(sendPacket);
-            
+
     }
+
 }

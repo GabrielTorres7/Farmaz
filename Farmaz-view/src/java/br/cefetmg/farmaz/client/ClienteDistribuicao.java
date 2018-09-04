@@ -61,7 +61,7 @@ public class ClienteDistribuicao {
         DatagramPacket receiveConfirmation = new DatagramPacket(dadosRecebidos,
                 dadosRecebidos.length);
         clienteSocket.receive(receiveConfirmation);
-
+        
         //transforma os bytes no objeto e retorna para ser utilizado
         PacoteDados pacoteConfirmacao = (PacoteDados) Conversor.toObject(receiveConfirmation.getData());
 
