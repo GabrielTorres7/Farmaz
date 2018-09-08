@@ -12,6 +12,11 @@ import br.cefetmg.farmaz.model.daoImpl.ProdutoDAOImpl;
 import br.cefetmg.farmaz.model.dominio.Cidade;
 import br.cefetmg.farmaz.model.dominio.Cliente;
 import br.cefetmg.farmaz.model.dominio.Disponibilidade;
+import br.cefetmg.farmaz.model.dominio.Endereco;
+import br.cefetmg.farmaz.model.dominio.Estado;
+import br.cefetmg.farmaz.model.dominio.Farmacia;
+import br.cefetmg.farmaz.model.dominio.ItemPedido;
+import br.cefetmg.farmaz.model.dominio.Pedido;
 import br.cefetmg.farmaz.model.dominio.Produto;
 import br.cefetmg.farmaz.model.exception.LogicaNegocioException;
 import br.cefetmg.farmaz.model.exception.PersistenciaException;
@@ -75,8 +80,13 @@ public class AdapterThread implements Runnable {
         
         Cidade cidade;
         Cliente cliente;
-        Produto produto;
         Disponibilidade disponibilidade;
+        Endereco endereco;
+        Estado estado;
+        Farmacia farmacia;
+        ItemPedido itemPedido;
+        Pedido pedido;
+        Produto produto;
         
         Long cidadeId;
         Long clienteId;
@@ -184,49 +194,6 @@ public class AdapterThread implements Runnable {
                 break;
             
                 
-            //REQUISIÇÕES PARA O SERVICO MANTER PRODUTO
-            case "CadastrarProduto":
-                produto = (Produto) pacoteDados.getObjeto();
-                produtoId = manterProduto.cadastrarProduto(produto);
-                
-                pacoteResposta = new PacoteDados(produtoId);
-                break;
-            
-            case "AtualizarProduto":
-                produto = (Produto) pacoteDados.getObjeto();
-                manterProduto.atualizarProduto(produto);
-                
-                pacoteResposta = new PacoteDados("T");
-                break;
-                
-            case "DeletarProduto":
-                produtoId = (Long) pacoteDados.getObjeto();
-                manterProduto.deletarProduto(produtoId);
-                
-                pacoteResposta = new PacoteDados("T");
-                break;
-            
-            case "GetProdutoById":
-                produtoId = (Long) pacoteDados.getObjeto();
-                produto = manterProduto.getProdutoById(produtoId);
-                
-                pacoteResposta = new PacoteDados(produto);
-                break;
-                
-            case "GetProdutoByNome":
-                nome = (String) pacoteDados.getObjeto();
-                produto = manterProduto.getProdutoByNome(nome);
-                
-                pacoteResposta = new PacoteDados(produto);
-                break;
-                
-            case "GetAllProdutos":
-                List<Produto> produtos = manterProduto.listAll();
-                
-                pacoteResposta = new PacoteDados("T", produtos);
-                break;
-                
-                
             //REQUISIÇÕES PARA O SERVICO MANTER DISPONIBILIDADE
             case "InserirDisponibilidade":
                 disponibilidade = (Disponibilidade) pacoteDados.getObjeto();
@@ -269,6 +236,50 @@ public class AdapterThread implements Runnable {
                 
                 pacoteResposta = new PacoteDados(produtosFarmacia);
                 break;
+            
+                
+            //REQUISIÇÕES PARA O SERVICO MANTER PRODUTO
+            case "CadastrarProduto":
+                produto = (Produto) pacoteDados.getObjeto();
+                produtoId = manterProduto.cadastrarProduto(produto);
+                
+                pacoteResposta = new PacoteDados(produtoId);
+                break;
+            
+            case "AtualizarProduto":
+                produto = (Produto) pacoteDados.getObjeto();
+                manterProduto.atualizarProduto(produto);
+                
+                pacoteResposta = new PacoteDados("T");
+                break;
+                
+            case "DeletarProduto":
+                produtoId = (Long) pacoteDados.getObjeto();
+                manterProduto.deletarProduto(produtoId);
+                
+                pacoteResposta = new PacoteDados("T");
+                break;
+            
+            case "GetProdutoById":
+                produtoId = (Long) pacoteDados.getObjeto();
+                produto = manterProduto.getProdutoById(produtoId);
+                
+                pacoteResposta = new PacoteDados(produto);
+                break;
+                
+            case "GetProdutoByNome":
+                nome = (String) pacoteDados.getObjeto();
+                produto = manterProduto.getProdutoByNome(nome);
+                
+                pacoteResposta = new PacoteDados(produto);
+                break;
+                
+            case "GetAllProdutos":
+                List<Produto> produtos = manterProduto.listAll();
+                
+                pacoteResposta = new PacoteDados("T", produtos);
+                break;
+            
         }
         
         Servidor.enviarDados(IPAddress, clientPort, pacoteResposta);
