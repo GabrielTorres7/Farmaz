@@ -52,7 +52,7 @@ public class Servidor {
         //cria uma Thread para tratar a requisicao do cliente
         AdapterThread adaptador = new AdapterThread(IPAddress, clientPort, port, pacoteDados);
         Thread adapterThread = new Thread(adaptador);
-        System.out.println("Enviou para a Thread");
+        System.out.println("Thread criada!");
         adapterThread.start();
     }
 

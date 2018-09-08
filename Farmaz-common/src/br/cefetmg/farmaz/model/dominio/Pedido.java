@@ -5,13 +5,15 @@
  */
 package br.cefetmg.farmaz.model.dominio;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author Gabriel
  */
-public class Pedido {
+public class Pedido implements Serializable{
+    
     private Long pedidoId;
     private Long clienteId;
     private String farmaciaId;

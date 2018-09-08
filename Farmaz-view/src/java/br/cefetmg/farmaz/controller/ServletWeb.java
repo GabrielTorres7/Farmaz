@@ -50,6 +50,8 @@ public class ServletWeb extends HttpServlet {
             jsp = "Faq.jsp";
         else if(acao.equals("Historico"))
             jsp = HistoricoCompras.executa(request);
+        else if(acao.equals("ItensPedido"))
+            jsp = "";
         
             RequestDispatcher rd = request.getRequestDispatcher(jsp);
             rd.forward(request, response);  

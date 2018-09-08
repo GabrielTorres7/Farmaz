@@ -6,10 +6,10 @@
 package br.cefetmg.farmaz.proxy;
 
 import br.cefetmg.farmaz.client.ClienteDistribuicao;
-import br.cefetmg.farmaz.model.dominio.Cliente;
+import br.cefetmg.farmaz.model.dominio.Estado;
 import br.cefetmg.farmaz.model.exception.LogicaNegocioException;
 import br.cefetmg.farmaz.model.exception.PersistenciaException;
-import br.cefetmg.farmaz.model.service.ManterCliente;
+import br.cefetmg.farmaz.model.service.ManterEstado;
 import br.cefetmg.farmaz.util.PacoteDados;
 import java.io.IOException;
 import java.net.SocketException;
@@ -22,21 +22,20 @@ import java.util.logging.Logger;
  *
  * @author Gabriel
  */
-public class ManterClienteProxy implements ManterCliente{
+public class ManterEstadoProxy implements ManterEstado{
     
     private final ClienteDistribuicao clienteDistribuicao;
 
-    public ManterClienteProxy() throws SocketException, UnknownHostException {
+    public ManterEstadoProxy() throws SocketException, UnknownHostException {
         this.clienteDistribuicao = ClienteDistribuicao.getInstance();
     }
     
     @Override
-    public Long cadastrarCliente(Cliente cliente) throws PersistenciaException, LogicaNegocioException {
-
+    public Long cadastrarEstado(Estado estado) throws PersistenciaException, LogicaNegocioException {
         PacoteDados pacoteDados;
         
-        String requisicao = "CadastrarCliente";
-        pacoteDados = new PacoteDados(requisicao, cliente);
+        String requisicao = "CadastrarEstado";
+        pacoteDados = new PacoteDados(requisicao, estado);
         try {
             PacoteDados pacoteRecebido = clienteDistribuicao.requisicao(pacoteDados);
           
@@ -51,12 +50,11 @@ public class ManterClienteProxy implements ManterCliente{
     }
 
     @Override
-    public boolean atualizarCliente(Cliente cliente) throws PersistenciaException, LogicaNegocioException {
-        
+    public boolean atualizarEstado(Estado estado) throws PersistenciaException, LogicaNegocioException {
         PacoteDados pacoteDados;
         
-        String requisicao = "AtualizarCliente";
-        pacoteDados = new PacoteDados(requisicao, cliente);
+        String requisicao = "AtualizarEstado";
+        pacoteDados = new PacoteDados(requisicao, estado);
         
         try {
             PacoteDados pacoteRecebido = clienteDistribuicao.requisicao(pacoteDados);
@@ -73,12 +71,11 @@ public class ManterClienteProxy implements ManterCliente{
     }
 
     @Override
-    public boolean deletarCliente(Long clienteId) throws PersistenciaException {
-        
+    public boolean deletarEstado(Long estadoId) throws PersistenciaException {
         PacoteDados pacoteDados;
         
-        String requisicao = "DeletarCliente";
-        pacoteDados = new PacoteDados(requisicao, clienteId);
+        String requisicao = "DeletarEstado";
+        pacoteDados = new PacoteDados(requisicao, estadoId);
         try {
             PacoteDados pacoteRecebido = clienteDistribuicao.requisicao(pacoteDados);
           
@@ -92,91 +89,20 @@ public class ManterClienteProxy implements ManterCliente{
         }
         return false;
     }
-    
+
     @Override
-    public Cliente getClienteById(Long clienteId) throws PersistenciaException {
-        
+    public Estado getEstadoById(Long estadoId) throws PersistenciaException {
         PacoteDados pacoteDados;
-        Cliente cliente = null;
+        Estado estado = null;
         
-        String requisicao = "GetClienteById";
-        pacoteDados = new PacoteDados(requisicao, clienteId);
+        String requisicao = "GetEstadoById";
+        pacoteDados = new PacoteDados(requisicao, estadoId);
         try {
             PacoteDados pacoteRecebido = clienteDistribuicao.requisicao(pacoteDados);
             
-            cliente = (Cliente) pacoteRecebido.getObjeto();
-            return cliente;
+            estado = (Estado) pacoteRecebido.getObjeto();
+            return estado;
             
-        } catch (IOException ex) {
-            Logger.getLogger(ManterClienteProxy.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ManterClienteProxy.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
-    }
-    
-    @Override
-    public Cliente getClienteByEmail(String email) throws PersistenciaException {
-        
-        PacoteDados pacoteDados;
-        Cliente cliente = null;
-        
-        String requisicao = "GetClienteByEmail";
-        pacoteDados = new PacoteDados(requisicao, email);
-        try {
-            PacoteDados pacoteRecebido = clienteDistribuicao.requisicao(pacoteDados);
-            
-            cliente = (Cliente) pacoteRecebido.getObjeto();
-            return cliente;
-   
-        } catch (IOException ex) {
-            Logger.getLogger(ManterClienteProxy.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ManterClienteProxy.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
-    }
-    
-    @Override
-    public Cliente getClienteByEmailSenha(String email, String senha) throws PersistenciaException {
-        
-        PacoteDados pacoteDados;
-        Cliente cliente = null;
-        
-        String requisicao = "GetClienteByEmailSenha";
-        String[] dados = new String[2];
-        dados[0] = email;
-        dados[1] = senha;
-        
-        pacoteDados = new PacoteDados(requisicao, dados);
-        try {
-            PacoteDados pacoteRecebido = clienteDistribuicao.requisicao(pacoteDados);
-            
-            cliente = (Cliente) pacoteRecebido.getObjeto();
-            return cliente;
-            
-        } catch (IOException ex) {
-            Logger.getLogger(ManterClienteProxy.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ManterClienteProxy.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
-    }
-    
-    @Override
-    public List<Cliente> getAll() throws PersistenciaException {
-        
-        PacoteDados pacoteDados;
-        List<Cliente> clientes = null;
-        
-        String requisicao = "GetAllClientes";
-        pacoteDados = new PacoteDados(requisicao);
-        try {
-            PacoteDados pacoteRecebido = clienteDistribuicao.requisicao(pacoteDados);
-            
-            clientes = (List<Cliente>) pacoteRecebido.getObjeto();
-            return clientes;
-   
         } catch (IOException ex) {
             Logger.getLogger(ManterClienteProxy.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
@@ -185,4 +111,46 @@ public class ManterClienteProxy implements ManterCliente{
         return null;
     }
 
+    @Override
+    public Estado getEstadoBySigla(String sigla) throws PersistenciaException {
+        PacoteDados pacoteDados;
+        Estado estado = null;
+        
+        String requisicao = "GetEstadoBySigla";
+        pacoteDados = new PacoteDados(requisicao, sigla);
+        try {
+            PacoteDados pacoteRecebido = clienteDistribuicao.requisicao(pacoteDados);
+            
+            estado = (Estado) pacoteRecebido.getObjeto();
+            return estado;
+            
+        } catch (IOException ex) {
+            Logger.getLogger(ManterClienteProxy.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterClienteProxy.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
+    @Override
+    public List<Estado> getAll() throws PersistenciaException {
+        PacoteDados pacoteDados;
+        List<Estado> estados = null;
+        
+        String requisicao = "GetAllEstados";
+        pacoteDados = new PacoteDados(requisicao);
+        try {
+            PacoteDados pacoteRecebido = clienteDistribuicao.requisicao(pacoteDados);
+            
+            estados = (List<Estado>) pacoteRecebido.getObjeto();
+            return estados;
+   
+        } catch (IOException ex) {
+            Logger.getLogger(ManterClienteProxy.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterClienteProxy.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
 }

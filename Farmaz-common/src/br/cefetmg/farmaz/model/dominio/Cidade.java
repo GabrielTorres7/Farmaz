@@ -5,11 +5,13 @@
  */
 package br.cefetmg.farmaz.model.dominio;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Gabriel
  */
-public class Cidade {
+public class Cidade implements Serializable{
     
     private Long cidadeId;
     private Long ufId;

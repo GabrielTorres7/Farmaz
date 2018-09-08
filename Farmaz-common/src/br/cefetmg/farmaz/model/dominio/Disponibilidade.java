@@ -5,11 +5,13 @@
  */
 package br.cefetmg.farmaz.model.dominio;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Gabriel
  */
-public class Disponibilidade {
+public class Disponibilidade implements Serializable{
     
     private Long id;
     private Long produtoSeq;

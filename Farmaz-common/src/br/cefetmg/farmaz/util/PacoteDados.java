@@ -22,6 +22,10 @@ public class PacoteDados implements Serializable{
     public PacoteDados(String requisicao) {
         this.requisicao = requisicao;
     }
+
+    public PacoteDados(Object objeto) {
+        this.objeto = objeto;
+    }
     
     public PacoteDados(String requisicao, Object objeto) {
         this.requisicao = requisicao;

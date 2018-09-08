@@ -5,11 +5,13 @@
  */
 package br.cefetmg.farmaz.model.dominio;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Gabriel
  */
-public class Estado {
+public class Estado implements Serializable{
     
     private Long id;
     private String sigla;

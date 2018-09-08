@@ -5,11 +5,13 @@
  */
 package br.cefetmg.farmaz.model.dominio;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Gabriel
  */
-public class Produto {
+public class Produto implements Serializable{
     Long id;
     String nome;
     boolean isReceita;

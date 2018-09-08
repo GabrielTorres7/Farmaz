@@ -5,18 +5,13 @@
  */
 package br.cefetmg.farmaz.controller;
 
-import br.cefetmg.farmaz.model.daoImpl.DisponibilidadeDAOImpl;
-import br.cefetmg.farmaz.model.daoImpl.ProdutoDAOImpl;
 import br.cefetmg.farmaz.model.dominio.Disponibilidade;
 import br.cefetmg.farmaz.model.dominio.Produto;
-import br.cefetmg.farmaz.model.service.ManterDisponibilidade;
-import br.cefetmg.farmaz.model.service.ManterProduto;
-import br.cefetmg.farmaz.model.serviceImpl.ManterDisponibilidadeImpl;
-import br.cefetmg.farmaz.model.serviceImpl.ManterProdutoImpl;
+import br.cefetmg.farmaz.proxy.ManterDisponibilidadeProxy;
+import br.cefetmg.farmaz.proxy.ManterProdutoProxy;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  *
@@ -28,8 +23,8 @@ public class ListarProdutosCliente {
         String jsp;
         
         try {    
-            ManterProduto manterProduto = new ManterProdutoImpl(ProdutoDAOImpl.getInstance());
-            ManterDisponibilidade manterDisponibilidade = new ManterDisponibilidadeImpl(DisponibilidadeDAOImpl.getInstance());
+            ManterProdutoProxy manterProduto = new ManterProdutoProxy();
+            ManterDisponibilidadeProxy manterDisponibilidade = new ManterDisponibilidadeProxy();
             List<Produto> listProduto;
             List<Disponibilidade> listDisponibilidade;
             

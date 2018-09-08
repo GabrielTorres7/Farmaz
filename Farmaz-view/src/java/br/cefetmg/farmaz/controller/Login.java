@@ -5,13 +5,11 @@
  */
 package br.cefetmg.farmaz.controller;
 
-import br.cefetmg.farmaz.model.daoImpl.ClienteDAOImpl;
+import br.cefetmg.farmaz.proxy.ManterClienteProxy;
 import br.cefetmg.farmaz.model.daoImpl.FarmaciaDAOImpl;
 import br.cefetmg.farmaz.model.dominio.Cliente;
 import br.cefetmg.farmaz.model.dominio.Farmacia;
-import br.cefetmg.farmaz.model.service.ManterCliente;
 import br.cefetmg.farmaz.model.service.ManterFarmacia;
-import br.cefetmg.farmaz.model.serviceImpl.ManterClienteImpl;
 import br.cefetmg.farmaz.model.serviceImpl.ManterFarmaciaImpl;
 import javax.servlet.http.HttpServletRequest;
 
@@ -37,7 +35,7 @@ public class Login {
                 senha = request.getParameter("senha");
             }
 
-            ManterCliente manterCliente = new ManterClienteImpl(ClienteDAOImpl.getInstance());
+            ManterClienteProxy manterCliente = new ManterClienteProxy();
             ManterFarmacia manterFarmacia = new ManterFarmaciaImpl(FarmaciaDAOImpl.getInstance());
             Cliente cliente = manterCliente.getClienteByEmailSenha(email, senha);
             Farmacia farmacia = manterFarmacia.getFarmaciaByEmailSenha(email, senha);
