@@ -4,12 +4,10 @@
     Author     : Gabriel
 --%>
 
+<%@page import="br.cefetmg.farmaz.proxy.ManterFarmaciaProxy"%>
+<%@page import="br.cefetmg.farmaz.proxy.ManterProdutoProxy"%>
 <%@page import="br.cefetmg.farmaz.model.dominio.Farmacia"%>
 <%@page import="br.cefetmg.farmaz.model.dominio.Produto"%>
-<%@page import="br.cefetmg.farmaz.model.serviceImpl.ManterFarmaciaImpl"%>
-<%@page import="br.cefetmg.farmaz.model.daoImpl.FarmaciaDAOImpl"%>
-<%@page import="br.cefetmg.farmaz.model.serviceImpl.ManterProdutoImpl"%>
-<%@page import="br.cefetmg.farmaz.model.daoImpl.ProdutoDAOImpl"%>
 <%@page import="java.util.List"%>
 <%@page import="br.cefetmg.farmaz.model.dominio.Disponibilidade"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -59,8 +57,8 @@
                         Farmacia farmacia;
                         String nomeProduto;
                         String nomeFarmacia;
-                        ManterProdutoImpl manterProduto = new ManterProdutoImpl(ProdutoDAOImpl.getInstance());
-                        ManterFarmaciaImpl manterFarmacia = new ManterFarmaciaImpl(FarmaciaDAOImpl.getInstance());
+                        ManterProdutoProxy manterProduto = new ManterProdutoProxy();
+                        ManterFarmaciaProxy manterFarmacia = new ManterFarmaciaProxy();
                         List<Disponibilidade> carrinho = (List<Disponibilidade>) request.getSession().getAttribute("MeuCarrinho");
                         
                         for (Disponibilidade item: carrinho) {

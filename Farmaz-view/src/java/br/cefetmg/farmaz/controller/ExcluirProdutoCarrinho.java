@@ -7,6 +7,7 @@ package br.cefetmg.farmaz.controller;
 
 import br.cefetmg.farmaz.model.dominio.Disponibilidade;
 import java.util.ArrayList;
+import java.util.Objects;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -24,7 +25,7 @@ public class ExcluirProdutoCarrinho {
 
             for (int i = 0; i < carrinho.size(); i++) {
                 item = carrinho.get(i);
-                if (item.getId() == idDisponibilidade) {
+                if (Objects.equals(item.getId(), idDisponibilidade)) {
                     carrinho.remove(item);
                 }
             }

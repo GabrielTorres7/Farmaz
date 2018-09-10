@@ -5,9 +5,8 @@
  */
 package br.cefetmg.farmaz.controller;
 
-import br.cefetmg.farmaz.model.daoImpl.PedidoDAOImpl;
 import br.cefetmg.farmaz.model.dominio.Pedido;
-import br.cefetmg.farmaz.model.serviceImpl.ManterPedidoImpl;
+import br.cefetmg.farmaz.proxy.ManterPedidoProxy;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -24,7 +23,7 @@ public class HistoricoCompras {
         String jsp;
         
         try {                    
-            ManterPedidoImpl manterPedido = new ManterPedidoImpl(PedidoDAOImpl.getInstance());
+            ManterPedidoProxy manterPedido = new ManterPedidoProxy();
             Long idUser = (Long) request.getSession().getAttribute("cod_cliente");
             List<Pedido> historico = manterPedido.getPedidosByClienteId(idUser);
             

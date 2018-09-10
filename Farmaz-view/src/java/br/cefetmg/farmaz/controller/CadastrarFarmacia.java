@@ -5,17 +5,14 @@
  */
 package br.cefetmg.farmaz.controller;
 
-import br.cefetmg.farmaz.model.daoImpl.CidadeDAOImpl;
-import br.cefetmg.farmaz.model.daoImpl.EstadoDAOImpl;
-import br.cefetmg.farmaz.model.daoImpl.FarmaciaDAOImpl;
 import br.cefetmg.farmaz.model.dominio.Cidade;
 import br.cefetmg.farmaz.model.dominio.Estado;
 import br.cefetmg.farmaz.model.dominio.Farmacia;
 import br.cefetmg.farmaz.model.exception.LogicaNegocioException;
 import br.cefetmg.farmaz.model.exception.PersistenciaException;
-import br.cefetmg.farmaz.model.serviceImpl.ManterCidadeImpl;
-import br.cefetmg.farmaz.model.serviceImpl.ManterEstadoImpl;
-import br.cefetmg.farmaz.model.serviceImpl.ManterFarmaciaImpl;
+import br.cefetmg.farmaz.proxy.ManterCidadeProxy;
+import br.cefetmg.farmaz.proxy.ManterEstadoProxy;
+import br.cefetmg.farmaz.proxy.ManterFarmaciaProxy;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -34,9 +31,9 @@ public class CadastrarFarmacia {
             Cidade cidadeDominio = new Cidade();
             Estado estadoDominio = new Estado();
             Farmacia farmacia;
-            ManterFarmaciaImpl manterFarmacia;
-            ManterCidadeImpl manterCidade = new ManterCidadeImpl(CidadeDAOImpl.getInstance());
-            ManterEstadoImpl manterEstado = new ManterEstadoImpl(EstadoDAOImpl.getInstance());
+            ManterFarmaciaProxy manterFarmacia;
+            ManterCidadeProxy manterCidade = new ManterCidadeProxy();
+            ManterEstadoProxy manterEstado = new ManterEstadoProxy();
                             
             String nome = request.getParameter("nome");
             String email = request.getParameter("email");
@@ -77,7 +74,7 @@ public class CadastrarFarmacia {
             else
                 farmacia.setCodCidade(cidadeId);
                 
-            manterFarmacia = new ManterFarmaciaImpl(FarmaciaDAOImpl.getInstance());
+            manterFarmacia = new ManterFarmaciaProxy();
             manterFarmacia.cadastrarFarmacia(farmacia);
             
             request.setAttribute("email", email);

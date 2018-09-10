@@ -5,9 +5,6 @@
  */
 package br.cefetmg.farmaz.controller;
 
-import br.cefetmg.farmaz.model.daoImpl.CidadeDAOImpl;
-import br.cefetmg.farmaz.model.daoImpl.EnderecoDAOImpl;
-import br.cefetmg.farmaz.model.daoImpl.EstadoDAOImpl;
 import br.cefetmg.farmaz.model.dominio.Cidade;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -17,10 +14,10 @@ import br.cefetmg.farmaz.model.dominio.Endereco;
 import br.cefetmg.farmaz.model.dominio.Estado;
 import br.cefetmg.farmaz.model.exception.LogicaNegocioException;
 import br.cefetmg.farmaz.model.exception.PersistenciaException;
-import br.cefetmg.farmaz.model.serviceImpl.ManterCidadeImpl;
-import br.cefetmg.farmaz.model.serviceImpl.ManterEnderecoImpl;
-import br.cefetmg.farmaz.model.serviceImpl.ManterEstadoImpl;
+import br.cefetmg.farmaz.proxy.ManterCidadeProxy;
 import br.cefetmg.farmaz.proxy.ManterClienteProxy;
+import br.cefetmg.farmaz.proxy.ManterEnderecoProxy;
+import br.cefetmg.farmaz.proxy.ManterEstadoProxy;
 
 /**
  *
@@ -38,9 +35,9 @@ public class CadastrarCliente {
             Estado estadoDominio = new Estado();
             Cidade cidadeDominio = new Cidade();
             ManterClienteProxy manterCliente;
-            ManterEnderecoImpl manterEndereco = new ManterEnderecoImpl(EnderecoDAOImpl.getInstance());
-            ManterCidadeImpl manterCidade = new ManterCidadeImpl(CidadeDAOImpl.getInstance());
-            ManterEstadoImpl manterEstado = new ManterEstadoImpl(EstadoDAOImpl.getInstance());
+            ManterEnderecoProxy manterEndereco = new ManterEnderecoProxy();
+            ManterCidadeProxy manterCidade = new ManterCidadeProxy();
+            ManterEstadoProxy manterEstado = new ManterEstadoProxy();
 
             String nome = request.getParameter("nome");
             String email = request.getParameter("email");

@@ -5,10 +5,8 @@
  */
 package br.cefetmg.farmaz.controller;
 
-import br.cefetmg.farmaz.model.daoImpl.DisponibilidadeDAOImpl;
 import br.cefetmg.farmaz.model.dominio.Disponibilidade;
-import br.cefetmg.farmaz.model.service.ManterDisponibilidade;
-import br.cefetmg.farmaz.model.serviceImpl.ManterDisponibilidadeImpl;
+import br.cefetmg.farmaz.proxy.ManterDisponibilidadeProxy;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +24,7 @@ public class FinalizarCompra {
         String jsp;
         
         try {
-            ManterDisponibilidade manterDisponibilidade = new ManterDisponibilidadeImpl(DisponibilidadeDAOImpl.getInstance());
+            ManterDisponibilidadeProxy manterDisponibilidade = new ManterDisponibilidadeProxy();
             Disponibilidade item = new Disponibilidade();
             List<Disponibilidade> carrinho;
             

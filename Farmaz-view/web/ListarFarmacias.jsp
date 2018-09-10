@@ -4,15 +4,11 @@
     Author     : Gabriel
 --%>
 
+<%@page import="br.cefetmg.farmaz.proxy.ManterEstadoProxy"%>
+<%@page import="br.cefetmg.farmaz.proxy.ManterCidadeProxy"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="br.cefetmg.farmaz.model.service.ManterEstado"%>
-<%@page import="br.cefetmg.farmaz.model.serviceImpl.ManterEstadoImpl"%>
-<%@page import="br.cefetmg.farmaz.model.daoImpl.EstadoDAOImpl"%>
 <%@page import="br.cefetmg.farmaz.model.service.ManterCidade"%>
-<%@page import="br.cefetmg.farmaz.model.serviceImpl.ManterCidadeImpl"%>
-<%@page import="br.cefetmg.farmaz.model.daoImpl.CidadeDAOImpl"%>
-<%@page import="br.cefetmg.farmaz.model.daoImpl.DisponibilidadeDAOImpl"%>
-<%@page import="br.cefetmg.farmaz.model.serviceImpl.ManterDisponibilidadeImpl"%>
 <%@page import="br.cefetmg.farmaz.model.dominio.Disponibilidade"%>
 <%@page import="br.cefetmg.farmaz.model.dominio.Farmacia"%>
 <%@page import="java.util.List"%>
@@ -68,8 +64,8 @@
                     </tr>
                     <%
                         List<Farmacia> listFarmacia = (List<Farmacia>) request.getAttribute("farmacias");
-                        ManterCidade manterCidade = new ManterCidadeImpl(CidadeDAOImpl.getInstance());
-                        ManterEstado manterEstado = new ManterEstadoImpl(EstadoDAOImpl.getInstance());
+                        ManterCidadeProxy manterCidade = new ManterCidadeProxy();
+                        ManterEstadoProxy manterEstado = new ManterEstadoProxy();
                         List<Disponibilidade> listDisponibilidade = (List<Disponibilidade>) request.getAttribute("disponibilidade");
                         Farmacia farmacia;
                         

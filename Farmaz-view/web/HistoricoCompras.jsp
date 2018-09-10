@@ -4,11 +4,9 @@
     Author     : Gabriel
 --%>
 
+<%@page import="br.cefetmg.farmaz.proxy.ManterFarmaciaProxy"%>
 <%@page import="java.util.Collections"%>
 <%@page import="br.cefetmg.farmaz.model.dominio.Farmacia"%>
-<%@page import="br.cefetmg.farmaz.model.serviceImpl.ManterFarmaciaImpl"%>
-<%@page import="br.cefetmg.farmaz.model.serviceImpl.ManterFarmaciaImpl"%>
-<%@page import="br.cefetmg.farmaz.model.daoImpl.FarmaciaDAOImpl"%>
 <%@page import="br.cefetmg.farmaz.model.dominio.Pedido"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -53,7 +51,7 @@
                     </tr>
                     <%
                         List<Pedido> historico = (List<Pedido>) request.getAttribute("Historico");
-                        ManterFarmaciaImpl manterFarmacia = new ManterFarmaciaImpl(FarmaciaDAOImpl.getInstance());
+                        ManterFarmaciaProxy manterFarmacia = new ManterFarmaciaProxy();
                         Farmacia farmacia = new Farmacia();
                         String status = " ";
                         Collections.reverse(historico);

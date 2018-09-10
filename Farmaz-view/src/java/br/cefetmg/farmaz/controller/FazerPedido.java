@@ -5,13 +5,11 @@
  */
 package br.cefetmg.farmaz.controller;
 
-import br.cefetmg.farmaz.model.daoImpl.ItemPedidoDAOImpl;
-import br.cefetmg.farmaz.model.daoImpl.PedidoDAOImpl;
 import br.cefetmg.farmaz.model.dominio.Disponibilidade;
 import br.cefetmg.farmaz.model.dominio.ItemPedido;
 import br.cefetmg.farmaz.model.dominio.Pedido;
-import br.cefetmg.farmaz.model.serviceImpl.ManterItemPedidoImpl;
-import br.cefetmg.farmaz.model.serviceImpl.ManterPedidoImpl;
+import br.cefetmg.farmaz.proxy.ManterItemPedidoProxy;
+import br.cefetmg.farmaz.proxy.ManterPedidoProxy;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
@@ -38,8 +36,8 @@ public class FazerPedido {
             }else{
                 Pedido pedido = new Pedido();
                 ItemPedido itemPedido = new ItemPedido();
-                ManterItemPedidoImpl manterItemPedido = new ManterItemPedidoImpl(ItemPedidoDAOImpl.getInstance());
-                ManterPedidoImpl manterPedido = new ManterPedidoImpl(PedidoDAOImpl.getInstance());
+                ManterItemPedidoProxy manterItemPedido = new ManterItemPedidoProxy();
+                ManterPedidoProxy manterPedido = new ManterPedidoProxy();
                 List<Disponibilidade> carrinho = (List<Disponibilidade>) request.getSession().getAttribute("MeuCarrinho");
                 Long pedidoId;
 

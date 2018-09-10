@@ -4,11 +4,10 @@
     Author     : Gabriel
 --%>
 
+<%@page import="br.cefetmg.farmaz.proxy.ManterEstadoProxy"%>
 <%@page import="br.cefetmg.farmaz.model.dominio.Estado"%>
 <%@page import="java.util.List"%>
 <%@page import="br.cefetmg.farmaz.model.service.ManterEstado"%>
-<%@page import="br.cefetmg.farmaz.model.serviceImpl.ManterEstadoImpl"%>
-<%@page import="br.cefetmg.farmaz.model.daoImpl.EstadoDAOImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -113,7 +112,7 @@
                     <div class="col-xs-9">
                         <select class="form-control" name="estado" id="estado" required>
                             <%
-                                ManterEstadoImpl mantemEstado = new ManterEstadoImpl(EstadoDAOImpl.getInstance());
+                                ManterEstadoProxy mantemEstado = new ManterEstadoProxy();
                                 List<Estado> listEstado = (List<Estado>) mantemEstado.getAll();
                                 for (Estado estado: listEstado) {
                             %>

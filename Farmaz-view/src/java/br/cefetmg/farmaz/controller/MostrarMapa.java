@@ -5,24 +5,14 @@
  */
 package br.cefetmg.farmaz.controller;
 
-import br.cefetmg.farmaz.model.daoImpl.CidadeDAOImpl;
-import br.cefetmg.farmaz.model.daoImpl.DisponibilidadeDAOImpl;
-import br.cefetmg.farmaz.model.daoImpl.EnderecoDAOImpl;
-import br.cefetmg.farmaz.model.daoImpl.EstadoDAOImpl;
-import br.cefetmg.farmaz.model.daoImpl.FarmaciaDAOImpl;
 import br.cefetmg.farmaz.model.dominio.Disponibilidade;
 import br.cefetmg.farmaz.model.dominio.Endereco;
 import br.cefetmg.farmaz.model.dominio.Farmacia;
-import br.cefetmg.farmaz.model.service.ManterCidade;
-import br.cefetmg.farmaz.model.service.ManterDisponibilidade;
-import br.cefetmg.farmaz.model.service.ManterEndereco;
-import br.cefetmg.farmaz.model.service.ManterEstado;
-import br.cefetmg.farmaz.model.service.ManterFarmacia;
-import br.cefetmg.farmaz.model.serviceImpl.ManterCidadeImpl;
-import br.cefetmg.farmaz.model.serviceImpl.ManterDisponibilidadeImpl;
-import br.cefetmg.farmaz.model.serviceImpl.ManterEnderecoImpl;
-import br.cefetmg.farmaz.model.serviceImpl.ManterEstadoImpl;
-import br.cefetmg.farmaz.model.serviceImpl.ManterFarmaciaImpl;
+import br.cefetmg.farmaz.proxy.ManterCidadeProxy;
+import br.cefetmg.farmaz.proxy.ManterDisponibilidadeProxy;
+import br.cefetmg.farmaz.proxy.ManterEnderecoProxy;
+import br.cefetmg.farmaz.proxy.ManterEstadoProxy;
+import br.cefetmg.farmaz.proxy.ManterFarmaciaProxy;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
@@ -37,11 +27,11 @@ public class MostrarMapa {
         String jsp = "";
 
         try {
-            ManterCidade manterCidade = new ManterCidadeImpl(CidadeDAOImpl.getInstance());
-            ManterEstado manterEstado = new ManterEstadoImpl(EstadoDAOImpl.getInstance());
-            ManterEndereco manterEndereco = new ManterEnderecoImpl(EnderecoDAOImpl.getInstance());
-            ManterFarmacia manterFarmacia = new ManterFarmaciaImpl(FarmaciaDAOImpl.getInstance());
-            ManterDisponibilidade manterDisponibilidade = new ManterDisponibilidadeImpl(DisponibilidadeDAOImpl.getInstance());
+            ManterCidadeProxy manterCidade = new ManterCidadeProxy();
+            ManterEstadoProxy manterEstado = new ManterEstadoProxy();
+            ManterEnderecoProxy manterEndereco = new ManterEnderecoProxy();
+            ManterFarmaciaProxy manterFarmacia = new ManterFarmaciaProxy();
+            ManterDisponibilidadeProxy manterDisponibilidade = new ManterDisponibilidadeProxy();
             
             Long disponibilidadeId = Long.parseLong(request.getParameter("DisponibilidadeId"));
             Disponibilidade disponibilidade = manterDisponibilidade.getDisponibilidadeById(disponibilidadeId);
