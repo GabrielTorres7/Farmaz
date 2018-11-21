@@ -46,7 +46,8 @@ public class Login {
                 request.getSession().setAttribute("cod_cliente", cliente.getId());
                 jsp = ListarProdutosCliente.executa(request);
             } else if (farmacia != null) {
-              //  jsp = ListarProdutosFarmacia.executa(request);
+                request.getSession().setAttribute("cod_farmacia", farmacia.getCadastroPrefeitura());
+                jsp = ListarProdutosFarmacia.executa(request);
             }
 
         } catch (Exception e) {

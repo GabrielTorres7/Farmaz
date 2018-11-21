@@ -11,6 +11,7 @@ import br.cefetmg.farmaz.model.dominio.Farmacia;
 import br.cefetmg.farmaz.model.exception.LogicaNegocioException;
 import br.cefetmg.farmaz.model.exception.PersistenciaException;
 import br.cefetmg.farmaz.proxy.ManterCidadeProxy;
+import br.cefetmg.farmaz.proxy.ManterClienteProxy;
 import br.cefetmg.farmaz.proxy.ManterEstadoProxy;
 import br.cefetmg.farmaz.proxy.ManterFarmaciaProxy;
 import java.io.IOException;
@@ -32,6 +33,7 @@ public class CadastrarFarmacia {
             Estado estadoDominio = new Estado();
             Farmacia farmacia;
             ManterFarmaciaProxy manterFarmacia;
+            ManterClienteProxy manterCliente = new ManterClienteProxy();
             ManterCidadeProxy manterCidade = new ManterCidadeProxy();
             ManterEstadoProxy manterEstado = new ManterEstadoProxy();
                             
@@ -75,14 +77,20 @@ public class CadastrarFarmacia {
                 farmacia.setCodCidade(cidadeId);
                 
             manterFarmacia = new ManterFarmaciaProxy();
-            manterFarmacia.cadastrarFarmacia(farmacia);
             
-            request.setAttribute("email", email);
-            request.setAttribute("senha", senha);
-            request.setAttribute("tipo", "cadastro");
-            
-            jsp = Login.executa(request);
+            if(manterCliente.getClienteByEmail(email) != null || manterFarmacia.getFarmaciaByEmail(email) != null){
+                String erro = "Email já cadastrado!";
+                request.setAttribute("erro", erro);
+                jsp = "/Erro.jsp";
+            }else{
+                manterFarmacia.cadastrarFarmacia(farmacia);
 
+                request.setAttribute("email", email);
+                request.setAttribute("senha", senha);
+                request.setAttribute("tipo", "cadastro");
+
+                jsp = Login.executa(request);
+            }
         } catch (PersistenciaException | LogicaNegocioException ex) {
              System.out.println(ex);
              jsp = "";

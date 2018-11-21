@@ -26,7 +26,7 @@
                 <input type='hidden' name='cod' value=''>
                 <input type='hidden' name='table' value='Produto'>
                 <table class="table table-striped"> 
-                    <tr>
+                    <tr class="info">
                         <td>
                             Nome
                         </td>

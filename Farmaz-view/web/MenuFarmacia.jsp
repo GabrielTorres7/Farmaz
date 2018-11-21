@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Menu
-    Created on : 24/07/2018, 04:02:18
+    Document   : MenuFarmacia
+    Created on : 19/11/2018, 21:43:52
     Author     : Gabriel
 --%>
 
@@ -32,7 +32,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     
-                    <a href="/Farmaz-view/ServletWeb?acao=Voltar" class="navbar-brand">
+                    <a href="/Farmaz-view/ServletWeb?acao=ListarProdutosFarmacia" class="navbar-brand">
                         <img src="images/Farmaz_PILULA.png" height="38px" width="60px" >
                     </a>
                 </div>
@@ -41,8 +41,8 @@
                     <ul class="nav navbar-nav">
                         <li><a href="/Farmaz-view/ServletWeb?acao=ListarFaq">Ajuda</a></li>
                         <li><a href="#">Perfil</a></li>
-                        <li><a href="/Farmaz-view/ServletWeb?acao=MeuCarrinho">Meu Carrinho</a></li>
-                        <li><a href="/Farmaz-view/ServletWeb?acao=Historico">Histórico de compras</a></li>
+                        <li><a href="#">Pedidos</a></li>
+                        <li><a href="#">Histórico de vendas</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#">Sair</a></li>
                     </ul>

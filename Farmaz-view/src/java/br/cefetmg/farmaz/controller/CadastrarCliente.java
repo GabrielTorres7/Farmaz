@@ -18,6 +18,7 @@ import br.cefetmg.farmaz.proxy.ManterCidadeProxy;
 import br.cefetmg.farmaz.proxy.ManterClienteProxy;
 import br.cefetmg.farmaz.proxy.ManterEnderecoProxy;
 import br.cefetmg.farmaz.proxy.ManterEstadoProxy;
+import br.cefetmg.farmaz.proxy.ManterFarmaciaProxy;
 
 /**
  *
@@ -35,6 +36,7 @@ public class CadastrarCliente {
             Estado estadoDominio = new Estado();
             Cidade cidadeDominio = new Cidade();
             ManterClienteProxy manterCliente;
+            ManterFarmaciaProxy manterFarmacia = new ManterFarmaciaProxy();
             ManterEnderecoProxy manterEndereco = new ManterEnderecoProxy();
             ManterCidadeProxy manterCidade = new ManterCidadeProxy();
             ManterEstadoProxy manterEstado = new ManterEstadoProxy();
@@ -70,29 +72,34 @@ public class CadastrarCliente {
             cliente.setSenha(senha);
 
             manterCliente = new ManterClienteProxy();
-            Long clienteId = manterCliente.cadastrarCliente(cliente);
-            
-            endereco = new Endereco();
-            endereco.setClienteId(clienteId);
-            if(cidadeId == null)
-                endereco.setCodCidade(cidadeDominio.getCidadeId());
-            else
-                endereco.setCodCidade(cidadeId);
-            
-            endereco.setCodUf(estadoDominio.getId());
-            endereco.setCep(cep);
-            endereco.setBairro(bairro);
-            endereco.setRua(rua);
-            endereco.setNumero(Integer.parseInt(numero));
-            
-            manterEndereco.inserirEndereco(endereco);
-            
-            request.setAttribute("email", email);
-            request.setAttribute("senha", senha);
-            request.setAttribute("tipo", "cadastro");
-            
-            jsp = Login.executa(request);
+            if(manterCliente.getClienteByEmail(email) != null || manterFarmacia.getFarmaciaByEmail(email) != null){
+                String erro = "Email já cadastrado!";
+                request.setAttribute("erro", erro);
+                jsp = "/Erro.jsp";
+            }else{
+                Long clienteId = manterCliente.cadastrarCliente(cliente);
 
+                endereco = new Endereco();
+                endereco.setClienteId(clienteId);
+                if(cidadeId == null)
+                    endereco.setCodCidade(cidadeDominio.getCidadeId());
+                else
+                    endereco.setCodCidade(cidadeId);
+
+                endereco.setCodUf(estadoDominio.getId());
+                endereco.setCep(cep);
+                endereco.setBairro(bairro);
+                endereco.setRua(rua);
+                endereco.setNumero(Integer.parseInt(numero));
+
+                manterEndereco.inserirEndereco(endereco);
+
+                request.setAttribute("email", email);
+                request.setAttribute("senha", senha);
+                request.setAttribute("tipo", "cadastro");
+
+                jsp = Login.executa(request);
+            }
         } catch (PersistenciaException | LogicaNegocioException ex) {
              System.out.println(ex);
              jsp = "";
