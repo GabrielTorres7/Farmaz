@@ -461,7 +461,7 @@ public class AdapterThread implements Runnable {
                 break;
             
             case "GetPedidosByFarmaciaId":
-                dominioId = Long.parseLong((String) pacoteDados.getObjeto());
+                dominioId = (Long) pacoteDados.getObjeto();
                 pedidos = manterPedido.getPedidosByFarmaciaId(dominioId);
                 
                 pacoteResposta = new PacoteDados(pedidos);

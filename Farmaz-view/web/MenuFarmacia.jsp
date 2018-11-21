@@ -41,10 +41,10 @@
                     <ul class="nav navbar-nav">
                         <li><a href="/Farmaz-view/ServletWeb?acao=ListarFaq">Ajuda</a></li>
                         <li><a href="#">Perfil</a></li>
-                        <li><a href="#">Pedidos</a></li>
+                        <li><a href="/Farmaz-view/ServletWeb?acao=ListarPedidos">Pedidos</a></li>
                         <li><a href="#">Histórico de vendas</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Sair</a></li>
+                        <li><a href="/Farmaz-view/ServletWeb?acao=Sair">Sair</a></li>
                     </ul>
                 </div>
             </section>

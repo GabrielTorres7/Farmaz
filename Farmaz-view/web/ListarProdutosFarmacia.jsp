@@ -34,6 +34,10 @@
                 <input type='hidden' name='acao' value=''>
                 <input type='hidden' name='cod' value=''>
                 <input type='hidden' name='table' value='Produto'>
+                <%ManterProdutoProxy manterProduto;
+                    Produto produto;
+                    List<Disponibilidade> listProduto = (List<Disponibilidade>) request.getAttribute("produtos");
+                    if (listProduto != null) { %>
                 <table class="table table-striped"> 
                     <tr class="info">
                         <td>
@@ -62,13 +66,10 @@
                         </td>
                     </tr>
                     <%
-                        ManterProdutoProxy manterProduto;
-                        Produto produto;
-                        List<Disponibilidade> listProduto = (List<Disponibilidade>) request.getAttribute("produtos");
-                        if (listProduto != null) {
-                            for (Disponibilidade disponibilidade : listProduto) {
-                                manterProduto = new ManterProdutoProxy();
-                                produto = manterProduto.getProdutoById(disponibilidade.getProdutoSeq());
+
+                        for (Disponibilidade disponibilidade : listProduto) {
+                            manterProduto = new ManterProdutoProxy();
+                            produto = manterProduto.getProdutoById(disponibilidade.getProdutoSeq());
                     %>
                     <tr>
                         <td>
@@ -110,17 +111,17 @@
                                 <i class="glyphicon glyphicon-remove"></i>
                             </a>
                         </td>
-                    </tr>
-                    <%  }
-                        }else{%>   
-                        
-                            <h2>
-                                Voce ainda não cadastrou nenhum produto!
-                            </h2>
-                        
-                        <%}
-                            %>
+                    </tr>                    
+                    <%  } %>
                 </table>
+                <%
+                    } else {%>   
+                <div>
+                    <h2>Voce ainda não cadastrou nenhum produto!</h2>
+                </div>
+
+                <%}
+                %>
             </form>
         </div>              
     </body>

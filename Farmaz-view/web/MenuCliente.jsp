@@ -44,7 +44,7 @@
                         <li><a href="/Farmaz-view/ServletWeb?acao=MeuCarrinho">Meu Carrinho</a></li>
                         <li><a href="/Farmaz-view/ServletWeb?acao=Historico">Histórico de compras</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Sair</a></li>
+                        <li><a href="/Farmaz-view/ServletWeb?acao=Sair">Sair</a></li>
                     </ul>
                 </div>
             </section>

@@ -216,10 +216,10 @@ public class PedidoDAOImpl implements PedidoDAO {
         try {
             Connection connection = ManterConexao.getInstance().getConnection();
 
-            String sql = "SELECT * FROM pedido WHERE cadastro_prefeitura = ? ORDER BY nome";
+            String sql = "SELECT * FROM pedido WHERE cadastro_prefeitura = ?";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
-            pstmt.setLong(1, farmaciaId);
+            pstmt.setString(1, Long.toString(farmaciaId));
             ResultSet rs = pstmt.executeQuery();
 
             ArrayList<Pedido> listPedidos = null;
@@ -302,7 +302,7 @@ public class PedidoDAOImpl implements PedidoDAO {
             String sql = "SELECT * FROM pedido WHERE cadastro_prefeitura = ? AND status = ? ORDER BY nome";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
-            pstmt.setLong(1, farmaciaId);
+            pstmt.setString(1, Long.toString(farmaciaId));
             pstmt.setLong(2, status);
             ResultSet rs = pstmt.executeQuery();
 

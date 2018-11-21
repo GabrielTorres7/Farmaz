@@ -84,9 +84,9 @@ public class DisponibilidadeDAOImpl implements DisponibilidadeDAO{
 
             String sql = "UPDATE disponibilidade "
                     + " SET seq_produto = ?, "
-                    + "     cadastro_prefeitura = ? "
-                    + "     estoque = ? "
-                    + "     preco = ? "
+                    + "     cadastro_prefeitura = ?, "
+                    + "     estoque = ?, "
+                    + "     preco = ?, "
                     + "     avaliacao = ? "
                     + " WHERE seq_disponibilidade = ?";
 

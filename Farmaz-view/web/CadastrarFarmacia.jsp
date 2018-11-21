@@ -49,7 +49,7 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label"  for="cnpj">CNPJ</label>
                     <div class="col-xs-9">    
-                        <input class="form-control" type="text" name="cnpj" id="cnpj" required>
+                        <input class="form-control" type="text" name="cnpj" id="cnpj" required
                             pattern="[0-9]{2}.[0-9]{3}.[0-9]{3}"
                             title="Digite o CNPJ no formato: nn.nnn.nnn">
                     </div>

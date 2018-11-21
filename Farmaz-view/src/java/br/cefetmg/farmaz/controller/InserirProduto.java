@@ -56,8 +56,16 @@ public class InserirProduto {
             disponibilidade.setFarmaciaCadastro((String) request.getSession().getAttribute("cod_farmacia"));
             disponibilidade.setEstoque(estoque);
             disponibilidade.setPreco(preco);
-
-            manterDisponibilidade.inserirDisponibilidade(disponibilidade);
+            
+            if(request.getSession().getAttribute("ultima").equals("inserir")){
+                manterDisponibilidade.inserirDisponibilidade(disponibilidade);
+            }else if(request.getSession().getAttribute("ultima").equals("editar")){
+                disponibilidade.setId((Long) request.getSession().getAttribute("codDisponibilidade"));
+                manterDisponibilidade.atualizarDisponibilidade(disponibilidade);
+            }
+            request.getSession().removeAttribute("ultima");
+            request.getSession().removeAttribute("codDisponibilidade");
+            
             jsp = ListarProdutosFarmacia.executa(request);
             
         } catch (Exception e) {
