@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class ServletWeb extends HttpServlet {
    private String jsp = "";
-
+   
    @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
@@ -64,6 +64,10 @@ public class ServletWeb extends HttpServlet {
             jsp = ListarPedidos.executa(request);
         else if(acao.equals("Sair"))
             jsp = Sair.executa(request);
+        else if(acao.equals("PerfilCliente"))
+            jsp = PerfilCliente.executa(request);
+        else if(acao.equals("AtualizarPerfilCliente"))
+            jsp = AtualizarPerfilCliente.executa(request);
         
             RequestDispatcher rd = request.getRequestDispatcher(jsp);
             rd.forward(request, response);  
