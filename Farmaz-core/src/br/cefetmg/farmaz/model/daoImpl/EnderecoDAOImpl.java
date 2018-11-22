@@ -89,12 +89,12 @@ public class EnderecoDAOImpl implements EnderecoDAO{
             
             String sql = "UPDATE endereco " +
                            " SET seq_cliente = ?, " +
-                           "     cod_cidade = ? " +
-                           "     cod_uf = ? " +
-                           "     cep = ? " +
-                           "     bairro = ? " +
-                           "     rua = ? " +
-                           "     numero = ? " +
+                           "     cod_cidade = ?, " +
+                           "     cod_uf = ?, " +
+                           "     cep = ?, " +
+                           "     bairro = ?, " +
+                           "     rua = ?, " +
+                           "     numero = ?, " +
                            "     complemento = ? " + 
                          " WHERE seq_endereco = ?";
 

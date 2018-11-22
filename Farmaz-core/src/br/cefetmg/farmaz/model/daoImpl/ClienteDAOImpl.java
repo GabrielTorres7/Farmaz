@@ -83,10 +83,10 @@ public class ClienteDAOImpl implements ClienteDAO {
 
             String sql = "UPDATE cliente "
                     + " SET nome = ?, "
-                    + "     email = ? "
-                    + "     documento_identificacao = ? "
-                    + "     telefone = ? "
-                    + "     senha = ? "
+                    + "     email = ?, "
+                    + "     documento_identificacao = ?, "
+                    + "     telefone = ?, "
+                    + "     senha = md5(?) "
                     + " WHERE seq_cliente = ?";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
