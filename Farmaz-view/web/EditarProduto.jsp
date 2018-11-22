@@ -55,21 +55,21 @@
                 </div>
                 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" for="telefone">Descrição</label>
+                    <label class="col-sm-2 control-label" for="descricao">Descrição</label>
                     <div class="col-xs-9">
                         <input class="form-control" type="text" name="descricao" id="descricao" value="<%=produto.getDescricao()%>" required>
                     </div>
                 </div>
                 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" for="email">Laboratorio</label>
+                    <label class="col-sm-2 control-label" for="laboratorio">Laboratorio</label>
                     <div class="col-xs-9">
                         <input class="form-control" type="text" name="laboratorio" id="laboratorio" value="<%=produto.getLaboratorio()%>">
                     </div>
                 </div>
                 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" for="senha">Cadastro da Anvisa</label>
+                    <label class="col-sm-2 control-label" for="cadastro">Cadastro da Anvisa</label>
                     <div class="col-xs-9">
                         <input class="form-control" type="text" name="cadastro" id="cadastro" value="<%=produto.getCadastroAnvisa()%>">
                     </div>

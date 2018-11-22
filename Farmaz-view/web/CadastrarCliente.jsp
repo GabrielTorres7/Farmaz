@@ -75,7 +75,7 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="cep">CEP</label>
                     <div class="col-xs-9">
-                        <input class="form-control" type="number" name="cep" id="cep" required
+                        <input class="form-control" type="number" name="cep" id="cep" required>
                     </div>
                 </div>
                 

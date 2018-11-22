@@ -40,7 +40,7 @@
                 <div class="collapse navbar-collapse pull-right" id="movelMenu">
                     <ul class="nav navbar-nav">
                         <li><a href="/Farmaz-view/ServletWeb?acao=ListarFaq">Ajuda</a></li>
-                        <li><a href="#">Perfil</a></li>
+                        <li><a href="/Farmaz-view/ServletWeb?acao=PerfilCliente">Perfil</a></li>
                         <li><a href="/Farmaz-view/ServletWeb?acao=MeuCarrinho">Meu Carrinho</a></li>
                         <li><a href="/Farmaz-view/ServletWeb?acao=Historico">Histórico de compras</a></li>
                         <li role="separator" class="divider"></li>
