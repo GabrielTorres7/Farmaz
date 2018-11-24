@@ -28,6 +28,7 @@
 
         <!-- Main Stylesheet File -->
         <link href="css/style.css" rel="stylesheet">
+        
 
         <!-- =======================================================
           Template Name: Spot
@@ -47,7 +48,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="SobreNosCliente.jsp"></i> Sobre-nós</a></li>
-                        <li><a href="/Farmaz-view/ServletWeb?acao=ListarFaq">Ajuda</a></li>
+                        <li><a data-toggle="modal" data-target="#faqModal" href="#faqModal">Ajuda</a></li>
                         <li class="active"><a href="/Farmaz-view/ServletWeb?acao=Voltar">  Página inicial</a></li>
                         <li><a href="/Farmaz-view/ServletWeb?acao=PerfilCliente"> Perfil</a></li>
                         <li><a href="/Farmaz-view/ServletWeb?acao=MeuCarrinho">  Meu Carrinho</a></li>
@@ -59,5 +60,53 @@
                 <!--/.nav-collapse -->
             </div>
         </div>
+        <!-- MODAL -->
+        <div class="modal fade" id="faqModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel" style="text-align: center">Perguntas frequentes  </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row centered">
+                        <h3><b> O que é o Farmaz?</b></h3>
+                        <p>Farmaz é um aplicativo que fornece ao usuário uma maneira de suprir
+                            sua demanda por produtos farmacêuticos de forma rápida e prática, 
+                            através da conexão direta entre cliente e estabelecimento.<br>
+                            Além disso, o Farmaz permite que você veja e compare
+                            os melhores preços e rotas de entrega, se adequando a sua necessidade</p>
+
+                        <h3><b>Quais produtos posso comprar através do Farmaz?</b> </h3>
+                        <p> No Farmaz é possivel encontrar produtos comuns de se encontrar em farmácias,
+                            como por exemplo : Medicamentos e remédios, produtos de beleza, nutrição, higiene
+                            pessoal, entre diversas outras opções.
+                        </p>
+                        <h3><b>Qual o prazo de entrega?</b> </h3>
+                        <p> O prazo de entrega vai variar de acordo com alguns fatores como a
+                            distância entre seu local e o estabelecimento comercial,transito, entre outros.
+                            O Farmaz disponibiliza um cálculo aproximado ao realizar a compra.
+                        </p>
+                        <h3><b>Quais formas de pagamento são aceitas?</b> </h3>
+                        <p> São aceitas transações em dinheiro pagas diretamente ao entregador e cartões
+                            de crédito diversos através do PagSeguro.
+                        </p>
+                        <h3><b>O Farmaz se responsabiliza pela venda e entrega dos produtos?</b> </h3>
+                        <p> O sistema Farmaz não se responsabiliza diretamente, uma vez que fazemos a aproximação
+                            entre o cliente e a farmácia e, após isso, eventuais problemas são de responsababilidade do estabelecimento comercial.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <!-- Bibliotecas JS -->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/php-mail-form/validate.js"></script>
+    <script src="lib/chart/chart.js"></script>
     </body>
 </html>
