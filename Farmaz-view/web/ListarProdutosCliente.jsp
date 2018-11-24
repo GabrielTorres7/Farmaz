@@ -11,68 +11,93 @@
 <html>
     <jsp:include page ="MenuCliente.jsp"/>
     <head>
-        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta charset="utf-8">
         <title>Farmaz</title>
-        
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="css/estilo.css" rel="stylesheet" type="text/css">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Favicons -->
+        <link href="images/icone.png" rel="icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,700,900" rel="stylesheet">
+
+        <!-- Bootstrap CSS File -->
+        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Libraries CSS Files -->
+        <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+        <!-- Main Stylesheet File -->
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- =======================================================
+          Template Name: Spot
+          Template URL: https://templatemag.com/spot-bootstrap-freelance-template/
+          Author: TemplateMag.com
+          License: https://templatemag.com/license/
+        ======================================================= -->
+
     </head>
     <body>
-        <div class="container">   
-            <h3>Lista de Produtos - Selecione pelo nome</h3>
+        <!-- PRICING SECTION -->
+        <div id="dg">
+            <div class="container">
 
-            <form name="frmProduto" method='post' action='/ServletWeb'>
-                <input type='hidden' name='acao' value=''>
-                <input type='hidden' name='cod' value=''>
-                <input type='hidden' name='table' value='Produto'>
-                <table class="table table-striped"> 
-                    <tr class="info">
-                        <td>
-                            Nome
-                        </td>
-                        <td>
-                            Receita
-                        </td>
-                        <td>
-                            Descricao
-                        </td>
-                        <td>
-                            Laboratorio
-                        </td>
-                        <td>
-                            Cadastro da Anvisa
-                        </td>
-                    </tr>
-                    <%
-                        List<Produto> listProduto = (List<Produto>) request.getAttribute("produtos");
-                        for (Produto produto: listProduto) {
-                    %>
-                            <tr>
-                                <td>
-                                    <a href="/Farmaz-view/ServletWeb?acao=ListarFarmaciasComProduto&CodProduto=<%=produto.getId()%>"><%=produto.getNome()%>
-                                </td>
-                                <td>
-                                    <% if(produto.isReceita() == true)
-                                            out.print("Possui");
-                                       else{
-                                           out.print("Não possui");
-                                       }
-                                    %>
-                                </td>
-                                <td>
-                                    <%=produto.getDescricao()%>
-                                </td>
-                                <td>
-                                    <%=produto.getLaboratorio()%>
-                                </td>
-                                <td>
-                                    <%=produto.getCadastroAnvisa()%>
-                                </td>
+                <div class="row centered">
+                    <h1><b>Selecione o produto</b>,</h1>
+                    <h2>que nós procuraremos as melhores ofertas próximas de você</h2>
+                    <br>
+                    <form name="frmProduto" method='post' action='/ServletWeb'>
+                        <!-- GAMBS DO TORRES -->
+                        <input type='hidden' name='acao' value=''>
+                        <input type='hidden' name='cod' value=''>
+                        <input type='hidden' name='table' value='Produto'>
 
-                            </tr>
-                    <%  } %>
-                </table>
-            </form>
-        </div>              
+
+                        <%
+                            List<Produto> listProduto = (List<Produto>) request.getAttribute("produtos");
+                            for (Produto produto : listProduto) {
+                        %>
+                        <div class="col-lg-4">
+                            <!-- START PRICING TABLE -->
+                            <div class="pricing-option">
+                                <div class="pricing-top">
+                                    <span class="pricing-edition">
+                                        <a href="/Farmaz-view/ServletWeb?acao=ListarFarmaciasComProduto&CodProduto=<%=produto.getId()%>"> <%=produto.getNome()%></a></span>
+                                    </span>
+                                    <span class="price">
+                                        <%=produto.getDescricao()%>                                        
+
+                                        <br><br>    
+                                        <small>
+                                            <% if (produto.isReceita() == true) {
+                                                    out.print("Necessário receita médica");
+                                                } else {
+                                                    out.print("");
+                                                }
+                                            %>
+                                        </small>
+                                    </span>
+                                </div>
+                                <ul>
+                                    <li> Cadastro da ANVISA: <%=produto.getCadastroAnvisa()%> </li>
+                                    <li> Laboratório: <%=produto.getLaboratorio()%> </li>
+                                </ul>
+                                <a href="/Farmaz-view/ServletWeb?acao=ListarFarmaciasComProduto&CodProduto=<%=produto.getId()%>" class="pricing-signup" >Procurar Farmácia</a>
+                            </div>
+
+                            <!-- /pricing-option -->
+                            <!-- END PRICING TABLE -->
+                        </div><%  }%><!-- fecha for -->
+                    </form>    
+                    <!-- /col -->
+                </div> 
+            </div>  
+            <!-- FOOTER -->
+        <jsp:include page ="Rodape.jsp"/> 
+        </div>            
+
     </body>
 </html>

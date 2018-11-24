@@ -8,49 +8,56 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
         <title>Farmaz</title>
-        <meta http-equiv="X-UA-Compatible" content="IE-edge">
-        <meta name="viewport" content="width=devide-width, initial-scale=1">
-        
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="css/estilo.css" rel="stylesheet" type="text/css">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Favicons -->
+        <link href="images/icone.png" rel="icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,700,900" rel="stylesheet">
+
+        <!-- Bootstrap CSS File -->
+        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Libraries CSS Files -->
+        <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+        <!-- Main Stylesheet File -->
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- =======================================================
+          Template Name: Spot
+          Template URL: https://templatemag.com/spot-bootstrap-freelance-template/
+          Author: TemplateMag.com
+          License: https://templatemag.com/license/
+        ======================================================= -->
+
     </head>
     <body>
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <section class="container">
-                <div class="navbar-header">
-                    <button type="button" 
-                        class="navbar-toggle collapsed"
-                        data-toggle="collapse"
-                        data-target="#movelMenu"
-                        aria-expanded="false">
-                        
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    
-                    <a href="/Farmaz-view/ServletWeb?acao=ListarProdutosFarmacia" class="navbar-brand">
-                        <img src="images/Farmaz_PILULA.png" height="38px" width="60px" >
-                    </a>
+        <!-- Fixed navbar -->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">   
+                    <a class="navbar-brand" href="#" style="padding-top: 10px;font-size: 33px;">Farmaz</a>                 
                 </div>
-                
-                <div class="collapse navbar-collapse pull-right" id="movelMenu">
-                    <ul class="nav navbar-nav">
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="SobreNos.jsp"></i> Sobre-nós</a></li>
                         <li><a href="/Farmaz-view/ServletWeb?acao=ListarFaq">Ajuda</a></li>
-                        <li><a href="#">Perfil</a></li>
+                        <li class="active"><a href="Home.jsp">  Página inicial</a></li>
+                        <li><a href="#"> Perfil</a></li>
                         <li><a href="/Farmaz-view/ServletWeb?acao=ListarPedidos">Pedidos</a></li>
                         <li><a href="#">Histórico de vendas</a></li>
-                        <li role="separator" class="divider"></li>
                         <li><a href="/Farmaz-view/ServletWeb?acao=Sair">Sair</a></li>
+
                     </ul>
                 </div>
-            </section>
-        </nav>
-        
-        <script src="js/jquery.js" type="text/javascript"></script>
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
     </body>
 </html>

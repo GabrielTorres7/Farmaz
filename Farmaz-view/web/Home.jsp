@@ -14,8 +14,9 @@
         <meta content="" name="keywords">
         <meta content="" name="description">
 
+        
         <!-- Favicons -->
-        <link href="images/Farmaz_PILULA.png" rel="icon">
+        <link href="images/icone.png" rel="icon">
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,700,900" rel="stylesheet">
@@ -60,14 +61,15 @@
                 </div>
                 <form action="ServletWeb" method="post" class="details">
                     <div class="input-container">
-                        <input class="col-sm-12 email-input with-placeholder" type="email" id="email" name="email" placeholder="Seu Email" />
+                        <input class="col-sm-12 email-input with-placeholder" type="email" name="email" id="email"  placeholder="Seu email" required/>
                     </div>
                     <div class="input-container">
-                        <input class="col-sm-12 email-input with-placeholder" type="password" id="senha" name="senha" placeholder="Sua Senha" />
+                        <input class="col-sm-12 email-input with-placeholder" type="password" name="senha"  placeholder="Sua senha" required/>
                     </div>
                     
+                    <!-- GAMBS DO TORRES BATATA -->
                     <input type="hidden" id="acao" name="acao" value="Login">
-                    
+
                     <input id="sign-up-button" type="submit" value="Entrar">
 
                     <p>Novo usuário? <a href="CadastrarCliente.jsp">Registre-se aqui</a>
@@ -128,25 +130,22 @@
         </div>
         <!-- BG -->
 
+        
+        <!-- FOOTER -->
+        <div id="f">
+            <div class="container">
+                <div class="row centered">
+                    <a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-instagram"></i></a>
+
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- Footer --> 
+        
         <!-- FOOTER -->
         <jsp:include page ="Rodape.jsp"/> 
-
-        <div id="copyrights">
-            <div class="container">
-                <p>
-                    &copy; Copyrights <strong>Farmaz</strong>. Todos direitos reservados
-                </p>
-                <div class="credits">
-                    <!--
-                      You are NOT allowed to delete the credit link to TemplateMag with free version.
-                      You can delete the credit link only if you bought the pro version.
-                      Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/spot-bootstrap-freelance-template/
-                      Licensing information: https://templatemag.com/license/
-                    -->
-                    Template fornecido pelo Spot, visite <a href="https://templatemag.com/">TemplateMag</a>
-                </div>
-            </div>
-        </div>
 
         <!-- JavaScript Libraries -->
         <script src="lib/jquery/jquery.min.js"></script>
