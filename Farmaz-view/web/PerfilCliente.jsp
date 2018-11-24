@@ -165,4 +165,5 @@
             </form>
         </div>
     </body>
+    <jsp:include page ="Rodape.jsp"/>
 </html>
