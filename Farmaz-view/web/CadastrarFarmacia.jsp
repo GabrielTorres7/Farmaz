@@ -134,8 +134,6 @@
 
     <!-- Jquery JS-->
     <script src="vendor/jquery/jquery.min.js"></script>
-
-
     <!-- Main JS-->
     <script src="js/global.js"></script>
     </body>
