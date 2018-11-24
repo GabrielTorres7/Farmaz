@@ -82,6 +82,10 @@ public class CadastrarFarmacia {
                 String erro = "Email já cadastrado!";
                 request.setAttribute("erro", erro);
                 jsp = "/Erro.jsp";
+            }else if(manterFarmacia.getFarmaciaById(cadastroPrefeitura) != null){
+                String erro = "Id de farmácia já cadastrado!";
+                request.setAttribute("erro", erro);
+                jsp = "/Erro.jsp";
             }else{
                 manterFarmacia.cadastrarFarmacia(farmacia);
 

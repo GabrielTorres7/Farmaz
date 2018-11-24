@@ -68,6 +68,10 @@ public class ServletWeb extends HttpServlet {
             jsp = PerfilCliente.executa(request);
         else if(acao.equals("AtualizarPerfilCliente"))
             jsp = AtualizarPerfilCliente.executa(request);
+        else if(acao.equals("PerfilFarmacia"))
+            jsp = PerfilFarmacia.executa(request);
+        else if(acao.equals("AtualizarPerfilFarmacia"))
+            jsp = AtualizarPerfilFarmacia.executa(request);
         
             RequestDispatcher rd = request.getRequestDispatcher(jsp);
             rd.forward(request, response);  

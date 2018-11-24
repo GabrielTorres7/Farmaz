@@ -20,14 +20,8 @@ public class MeuCarrinho {
         String jsp;
         
         try {                    
-            if(request.getSession().getAttribute("MeuCarrinho") == null){
-                String erro = "Você ainda não adicionou nenhum produto no carrinho!";
-                request.setAttribute("erro", erro);
-                jsp = "/Erro.jsp";
-            }else{
-                jsp = "/MeuCarrinho.jsp";
-            }
-            
+            jsp = "/MeuCarrinho.jsp";
+    
         } catch (Exception e) {
             e.printStackTrace();
             jsp = "";
