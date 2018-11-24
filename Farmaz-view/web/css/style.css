@@ -126,7 +126,7 @@ hr {
 
 #headerwrap{
   background: url(../images/bg.jpg) no-repeat center top;
-  margin-top: -10px;
+  margin-top: -70px;
   padding-top: 20px;
   text-align: center;
   background-attachment: relative;
@@ -215,9 +215,10 @@ hr {
 /* Blue Wrap */
 
 #blue {
-  background: #3498db;
+  background-image: linear-gradient(to bottom,  #3498db, #4aa3df);
   padding-top: 35px;
   padding-bottom: 35px;
+  margin-top: -70px;
 }
 
 #blue h1 {
@@ -242,6 +243,7 @@ hr {
   background: #2d2d2d;
   padding-top: 30px;
   padding-bottom: 30px;
+
 }
 
 #f i {
@@ -327,6 +329,8 @@ hr {
 
 .pricing-option {
   padding-bottom: 40px;
+  min-width: 360px;
+  min-height: 375px;
 }
 
 .pricing-option .pricing-top {
@@ -363,6 +367,7 @@ hr {
   display: block;
   font-size: 25px;
   letter-spacing: 8px;
+  padding-bottom: 20px;
 }
 
 .pricing-option .price {
@@ -526,7 +531,6 @@ hr {
 }
 
 /*Login modal*/
-
 .sign-up-modal p,
 .sign-up-modal .form-checkbox label {
 		font-size: 1em;
@@ -586,6 +590,8 @@ hr {
 
 .sign-up-modal input[type="email"],
 .sign-up-modal input[type="text"],
+.sign-up-modal input[type="number"],
+.sign-up-modal input[type="tel"],
 .sign-up-modal input[type="password"],
 .sign-up-modal input[type="checkbox"]:focus,
 .sign-up-modal input[type="submit"]:focus {
@@ -594,6 +600,8 @@ hr {
 
 .sign-up-modal input[type="email"],
 .sign-up-modal input[type="text"],
+.sign-up-modal input[type="tel"],
+.sign-up-modal input[type="number"],
 .sign-up-modal input[type="password"] {
 		font-weight: 700;
 		font-size: 1.4em;
@@ -607,6 +615,8 @@ hr {
 
 .sign-up-modal input[type="email"]:focus,
 .sign-up-modal input[type="text"]:focus,
+.sign-up-modal input[type="number"],
+.sign-up-modal input[type="tel"],   
 .sign-up-modal input[type="password"]:focus {
 		background: white;
 		transition: all 0.3s ease;
@@ -697,6 +707,12 @@ hr {
   padding: 20px 0;
   text-align: center;
   color: #fff;
+
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
 }
 
 #copyrights p {
