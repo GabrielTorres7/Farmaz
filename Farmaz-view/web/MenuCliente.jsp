@@ -46,7 +46,7 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="SobreNos.jsp"></i> Sobre-nós</a></li>
+                        <li><a href="SobreNosCliente.jsp"></i> Sobre-nós</a></li>
                         <li><a href="/Farmaz-view/ServletWeb?acao=ListarFaq">Ajuda</a></li>
                         <li class="active"><a href="/Farmaz-view/ServletWeb?acao=Voltar">  Página inicial</a></li>
                         <li><a href="/Farmaz-view/ServletWeb?acao=PerfilCliente"> Perfil</a></li>

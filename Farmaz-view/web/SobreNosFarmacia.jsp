@@ -1,12 +1,13 @@
 <%-- 
-    Document   : MenuFarmacia
-    Created on : 19/11/2018, 21:43:52
-    Author     : Gabriel
+    Document   : SobreNos
+    Created on : 21/11/2018, 21:28:57
+    Author     : User
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    <jsp:include page ="MenuFarmacia.jsp"/>
     <head>
         <meta charset="utf-8">
         <title>Farmaz</title>
@@ -15,7 +16,7 @@
         <meta content="" name="description">
 
         <!-- Favicons -->
-        <link href="images/icone.png" rel="icon">
+        <link href="images/Farmaz_PILULA.png" rel="icon">
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,700,900" rel="stylesheet">
@@ -38,26 +39,18 @@
 
     </head>
     <body>
-        <!-- Fixed navbar -->
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div id="blue">
             <div class="container">
-                <div class="navbar-header">   
-                    <a class="navbar-brand" href="/Farmaz-view/ServletWeb?acao=ListarProdutosFarmacia" style="padding-top: 10px;font-size: 33px;">Farmaz</a>                 
+                <div class="row centered">
+                    <div class="col-lg-9 col-lg-offset-2">
+                        <h1>Nossa equipe de desenvolvimento.</h1>
+                        <h2>Who are those guys ?</h2>
+                    </div>
                 </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="SobreNosFarmacia.jsp"></i> Sobre-nós</a></li>
-                        <li><a href="/Farmaz-view/ServletWeb?acao=ListarFaq">Ajuda</a></li>
-                        <li class="active"><a href="/Farmaz-view/ServletWeb?acao=ListarProdutosFarmacia">  Página inicial</a></li>
-                        <li><a href="#"> Perfil</a></li>
-                        <li><a href="/Farmaz-view/ServletWeb?acao=ListarPedidos">Pedidos</a></li>
-                        <li><a href="#">Histórico de vendas</a></li>
-                        <li><a href="/Farmaz-view/ServletWeb?acao=Sair">Sair</a></li>
-
-                    </ul>
-                </div>
-                <!--/.nav-collapse -->
+                <!-- row -->
             </div>
+            <!-- container -->
         </div>
+
     </body>
 </html>
