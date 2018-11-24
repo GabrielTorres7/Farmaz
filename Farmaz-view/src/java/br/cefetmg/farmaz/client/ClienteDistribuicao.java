@@ -44,7 +44,7 @@ public class ClienteDistribuicao {
 
     public PacoteDados requisicao(PacoteDados pacoteDados) throws IOException, ClassNotFoundException {
 
-        final int BYTE_LENGTH = 1024;
+        final int BYTE_LENGTH = 4096;
 
         byte[] dadosEnviados;
         byte[] dadosRecebidos = new byte[BYTE_LENGTH];
