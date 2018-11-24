@@ -49,6 +49,9 @@
                             Valor
                         </td>
                         <td>
+                            Troco
+                        </td>
+                        <td>
                             Rua
                         </td>
                         <td>
@@ -67,6 +70,7 @@
                         Cliente cliente = new Cliente();
                         Endereco endereco = new Endereco();
                         String status = " ";
+                        String pagamento = "";
                         
                         for (Pedido pedido: listPedido) {
                             cliente = manterCliente.getClienteById(pedido.getClienteId());
@@ -77,6 +81,11 @@
                                 status = "Preparando envio";
                             }else if(pedido.getIdtStatus() == 'A'){
                                 status = "A caminho";
+                            }
+                            if(pedido.getTroco() == 0){
+                                pagamento = "Cartão";
+                            }else{
+                                pagamento = Integer.toString(pedido.getTroco());
                             }
                     %>
                             <tr>
@@ -91,6 +100,9 @@
                                 </td>
                                 <td>
                                     <%=pedido.getValor()%>
+                                </td>
+                                <td>
+                                    <%=pagamento%>
                                 </td>
                                 <td>
                                     <%=endereco.getRua()%>

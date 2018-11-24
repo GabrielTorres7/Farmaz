@@ -33,6 +33,10 @@
                 <input type="hidden" name="ultimoJsp" value="Carrinho">
                 <input type='hidden' name='acao' value=''>
                 <input type='hidden' name='cod' value=''>
+                <%
+                    List<Disponibilidade> carrinho = (List<Disponibilidade>) request.getSession().getAttribute("MeuCarrinho");
+                    if(carrinho != null) {
+                    %>
                 <table class="table table-striped"> 
                     <tr>
                         <td>
@@ -59,7 +63,6 @@
                         String nomeFarmacia;
                         ManterProdutoProxy manterProduto = new ManterProdutoProxy();
                         ManterFarmaciaProxy manterFarmacia = new ManterFarmaciaProxy();
-                        List<Disponibilidade> carrinho = (List<Disponibilidade>) request.getSession().getAttribute("MeuCarrinho");
                         
                         for (Disponibilidade item: carrinho) {
                             produto = manterProduto.getProdutoById(item.getProdutoSeq());
@@ -101,7 +104,11 @@
                         <input class='btn btn-primary' type="submit" value="Finalizar Compra" onclick="SetAcao('FinalizarCompra',document.frmCarrinho)">
                     </div>
                 </div>
-                            
+                <% }else{%>
+                <div class="alert">
+                    <h2>Você ainda não adicionou nenhum produto ao carrinho!</h2>
+                </div>
+                    <% } %>          
                 <div class="form-group">
                     <div class="col-sm-10">
                         <input class='btn btn-success' type="submit" value="Voltar" onclick="SetAcao('Voltar',document.frmCarrinho)">
