@@ -15,7 +15,7 @@
         <meta content="" name="description">
 
         <!-- Favicons -->
-        <link href="imgages/Farmaz_PILULA.png" rel="icon">
+        <link href="images/icone.png" rel="icon">
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,700,900" rel="stylesheet">
@@ -38,17 +38,22 @@
 
     </head>
     <body>
-        <!-- FOOTER -->
-        <div id="f">
+        <div id="copyrights">
             <div class="container">
-                <div class="row centered">
-                    <a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-instagram"></i></a>
-
+                <p>
+                    &copy; Copyrights <strong>Farmaz</strong>. Todos direitos reservados
+                </p>
+                <div class="credits">
+                    <!--
+                      You are NOT allowed to delete the credit link to TemplateMag with free version.
+                      You can delete the credit link only if you bought the pro version.
+                      Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/spot-bootstrap-freelance-template/
+                      Licensing information: https://templatemag.com/license/
+                    -->
+                    Template fornecido pelo Spot, visite <a href="https://templatemag.com/">TemplateMag</a>
                 </div>
-                <!-- row -->
             </div>
-            <!-- container -->
         </div>
-        <!-- Footer --> 
+        
     </body>
 </html>
