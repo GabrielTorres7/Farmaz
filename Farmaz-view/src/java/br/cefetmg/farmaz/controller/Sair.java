@@ -20,7 +20,7 @@ public class Sair {
         try {
             request.getSession().invalidate();
 
-            jsp = "Login.jsp";
+            jsp = "Home.jsp";
 
         } catch (Exception e) {
             e.printStackTrace();

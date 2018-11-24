@@ -7,7 +7,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <jsp:include page ="MenuCliente.jsp"/>
     <head>
         <meta charset="utf-8">
         <title>Farmaz</title>
@@ -16,7 +15,7 @@
         <meta content="" name="description">
 
         <!-- Favicons -->
-        <link href="imgages/Farmaz_PILULA.png" rel="icon">
+        <link href="images/Farmaz_PILULA.png" rel="icon">
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,700,900" rel="stylesheet">
@@ -61,16 +60,18 @@
                 </div>
                 <form action="ServletWeb" method="post" class="details">
                     <div class="input-container">
-                        <input class="col-sm-12 email-input with-placeholder" type="email" id="email"  placeholder="Seu Email" />
+                        <input class="col-sm-12 email-input with-placeholder" type="email" id="email" name="email" placeholder="Seu Email" />
                     </div>
                     <div class="input-container">
-                        <input class="col-sm-12 email-input with-placeholder" type="password" id="senha"  placeholder="Sua Senha" />
+                        <input class="col-sm-12 email-input with-placeholder" type="password" id="senha" name="senha" placeholder="Sua Senha" />
                     </div>
-
+                    
+                    <input type="hidden" id="acao" name="acao" value="Login">
+                    
                     <input id="sign-up-button" type="submit" value="Entrar">
 
-                    <p>Novo usuário? <a href="#signIn">Registre-se aqui</a>
-                    <p>Quer ser nosso parceiro? <a href="#signIn">Cadastre sua farmácia aqui</a>
+                    <p>Novo usuário? <a href="CadastrarCliente.jsp">Registre-se aqui</a>
+                    <p>Quer ser nosso parceiro? <a href="CadastrarFarmacia.jsp">Cadastre sua farmácia aqui</a>
 
 
                 </form>

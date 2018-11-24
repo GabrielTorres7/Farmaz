@@ -15,7 +15,7 @@
         <meta content="" name="description">
 
         <!-- Favicons -->
-        <link href="imgages/Farmaz_PILULA.png" rel="icon">
+        <link href="images/Farmaz_PILULA.png" rel="icon">
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,700,900" rel="stylesheet">
@@ -42,16 +42,16 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">   
-                    <a class="navbar-brand" href="#" style="padding-top: 10px;font-size: 33px;">Farmaz</a>                 
+                    <a class="navbar-brand" href="/Farmaz-view/ServletWeb?acao=Voltar" style="padding-top: 10px;font-size: 33px;">Farmaz</a>                 
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="SobreNos.jsp"></i> Sobre-nós</a></li>
-                        <li class="active"><a href="Home.jsp">  Página inicial</a></li>
-                        <li><a href="#"> Perfil</a></li>
+                        <li class="active"><a href="/Farmaz-view/ServletWeb?acao=Voltar">  Página inicial</a></li>
+                        <li><a href="/Farmaz-view/ServletWeb?acao=PerfilCliente"> Perfil</a></li>
                         <li><a href="/Farmaz-view/ServletWeb?acao=MeuCarrinho">  Meu Carrinho</a></li>
                         <li><a href="/Farmaz-view/ServletWeb?acao=Historico">  Histórico de compras</a></li>
-                        <li><a href="#">  Sair</a></li>
+                        <li><a href="/Farmaz-view/ServletWeb?acao=Sair">  Sair</a></li>
 
                     </ul>
                 </div>

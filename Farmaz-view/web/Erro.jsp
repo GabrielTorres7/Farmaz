@@ -19,7 +19,7 @@
         <h1>Erro:</h1>
         <h2><%=erro%></h2>
         <form action="Faq.jsp">
-            <input type="submit" value="BOTAO" />
+            <input type="submit" value="Precisa de ajuda?" />
         </form>
     </body>
 </html>
