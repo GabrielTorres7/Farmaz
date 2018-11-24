@@ -18,5 +18,8 @@
     <body>
         <h1>Erro:</h1>
         <h2><%=erro%></h2>
+        <form action="Faq.jsp">
+            <input type="submit" value="BOTAO" />
+        </form>
     </body>
 </html>
