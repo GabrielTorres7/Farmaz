@@ -164,6 +164,6 @@
                 
             </form>
         </div>
+        <jsp:include page ="Rodape.jsp"/>
     </body>
-    <jsp:include page ="Rodape.jsp"/>
 </html>

@@ -95,9 +95,8 @@
                     <!-- /col -->
                 </div> 
             </div>  
-            <!-- FOOTER -->
-        <jsp:include page ="Rodape.jsp"/> 
         </div>            
-
+        <!-- FOOTER -->
+        <jsp:include page ="Rodape.jsp"/> 
     </body>
 </html>
