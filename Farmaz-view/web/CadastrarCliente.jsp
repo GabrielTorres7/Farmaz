@@ -123,10 +123,10 @@
                             </div>
                         </div>
                         <input type="hidden" name="acao" id="acao" value="CadastraCliente">
+                        <div class="card-footer">
+                            <input class="btn btn--radius-2 btn--blue-2" type="submit" name="botao" value="Finalizar cadastro" id="botao">
+                        </div>
                     </form>
-                </div>
-                <div class="card-footer">
-                    <button class="btn btn--radius-2 btn--blue-2" type="submit" name="botao" id="botao">Finalizar cadastro</button>
                 </div>
             </div>
         </div>
