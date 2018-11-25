@@ -45,10 +45,11 @@
         <div id="dg">
             <div class="container">
 
-                <div class="row centered">
+                
                     <h1><b>Selecione o produto</b>,</h1>
                     <h2>que nós procuraremos as melhores ofertas próximas de você</h2>
                     <br>
+                    <div class="row centered" style="display: -webkit-  flex; display: -ms-flexbox; display: flex; overflow: hidden;">
                     <form name="frmProduto" method='post' action='/ServletWeb'>
                         <!-- GAMBS DO TORRES -->
                         <input type='hidden' name='acao' value=''>
@@ -60,7 +61,7 @@
                             List<Produto> listProduto = (List<Produto>) request.getAttribute("produtos");
                             for (Produto produto : listProduto) {
                         %>
-                        <div class="col-lg-4">
+                        <div class="col-lg-4" style="flex: 1;">
                             <!-- START PRICING TABLE -->
                             <div class="pricing-option">
                                 <div class="pricing-top">
@@ -75,7 +76,7 @@
                                             <% if (produto.isReceita() == true) {
                                                     out.print("Necessário receita médica");
                                                 } else {
-                                                    out.print("");
+                                                    out.print("Não precisa receita médica");
                                                 }
                                             %>
                                         </small>
