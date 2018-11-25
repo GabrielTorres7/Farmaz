@@ -56,6 +56,13 @@
                             </div>
                         </div>
                         <div class="form-row">
+                            <div class="name">Telefone</div>
+                            <div class="value">
+                                <input class="input--style-6" type="telefone" name="telefone" id="telefone" 
+                                       placeholder="(00)00000-0000 "  required>
+                            </div>
+                        </div>
+                        <div class="form-row">
                             <div class="name">Email</div>
                             <div class="value">
                                 <div class="input-group">
