@@ -1,4 +1,4 @@
-DELETE FROM uf;
+﻿DELETE FROM uf;
 DELETE FROM cidade;
 DELETE FROM produto;
 DELETE FROM cliente;
@@ -9,6 +9,12 @@ DELETE FROM disponibilidade;
 
 insert into uf(cod_uf, sigla, nome)
 values
+(1, 'AC', 'Acre'),
+(2, 'MG', 'Minas Gerais'),
+(3, 'RJ', 'Rio de Janeiro'),
+(4, 'SP', 'São Paulo'),
+(5, 'BA', 'Bahia'),
+(6, 'RS', 'Rio Grande do Sul'),
 (7,'MS','Mato Grosso do Sul'),
 (8,'MT','Mato Grosso'),
 (9,'PI','Piauí'),
@@ -18,6 +24,7 @@ values
 insert into cidade
 (cod_cidade, nome, cod_uf)
 values
+(1,'Belo Horizonte', 2),
 (2,'Rio Branco', 1),
 (3,'Rio de Janeiro', 3),
 (4,'Sao Paulo', 4),
@@ -34,6 +41,8 @@ values
 insert into produto
 (seq_produto, nome, receita, descricao, laboratorio, cadastro_anvisa)
 values
+(1,'Creme', true, 'Produto de Beleza 500ml', 'São Geraldo', 123456),
+(2,'Dipirona', false, 'Remédio para dor de cabeça', 'Águia', 578941),
 (3,'Neosaldina', false, 'Remedio para dor', 'JesusCristoPai', 456123),
 (4,'Desloratadina', false, 'Alergia', 'NeymarLab', 476123),
 (5,'Remedio do Allan', true, 'Remedio de doido', 'NeymarLab', 456783),
