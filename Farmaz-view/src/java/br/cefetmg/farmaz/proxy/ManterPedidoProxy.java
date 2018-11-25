@@ -180,12 +180,12 @@ public class ManterPedidoProxy implements ManterPedido{
     }
 
     @Override
-    public List<Pedido> getPedidosByFarmaciaIdAndStatus(Long farmaciaId, char status) throws PersistenciaException {
+    public List<Pedido> getPedidosByFarmaciaIdAndStatus(Long farmaciaId, String status) throws PersistenciaException {
         PacoteDados pacoteDados;
         List<Pedido> pedidos = null;
         
         String requisicao = "GetPedidosByFarmaciaIdAndStatus";
-        Object[] dados = new String[2];
+        Object[] dados = new Object[2];
         dados[0] = farmaciaId;
         dados[1] = status;
         

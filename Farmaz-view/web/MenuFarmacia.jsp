@@ -64,7 +64,7 @@
                         <li class="active"><a href="/Farmaz-view/ServletWeb?acao=ListarProdutosFarmacia">  Página inicial</a></li>
                         <li><a href="/Farmaz-view/ServletWeb?acao=PerfilFarmacia"> Perfil</a></li>
                         <li><a href="/Farmaz-view/ServletWeb?acao=ListarPedidos">Pedidos</a></li>
-                        <li><a href="#">Histórico de vendas</a></li>
+                        <li><a href="/Farmaz-view/ServletWeb?acao=HistoricoVendas">Histórico de vendas</a></li>
                         <li><a href="/Farmaz-view/ServletWeb?acao=Sair">Sair</a></li>
                     </ul>
                 </div>

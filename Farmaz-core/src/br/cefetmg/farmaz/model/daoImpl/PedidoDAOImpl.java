@@ -293,17 +293,17 @@ public class PedidoDAOImpl implements PedidoDAO {
             throw new PersistenciaException(e);
         }
     }
-
+    
     @Override
-    public List<Pedido> getPedidosByFarmaciaIdAndStatus(Long farmaciaId, char status) throws PersistenciaException {
+    public List<Pedido> getPedidosByFarmaciaIdAndStatus(Long farmaciaId, String status) throws PersistenciaException {
         try {
             Connection connection = ManterConexao.getInstance().getConnection();
 
-            String sql = "SELECT * FROM pedido WHERE cadastro_prefeitura = ? AND status = ? ORDER BY nome";
+            String sql = "SELECT * FROM pedido WHERE cadastro_prefeitura = ? AND status = ?";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setString(1, Long.toString(farmaciaId));
-            pstmt.setLong(2, status);
+            pstmt.setString(2, status);
             ResultSet rs = pstmt.executeQuery();
 
             ArrayList<Pedido> listPedidos = null;

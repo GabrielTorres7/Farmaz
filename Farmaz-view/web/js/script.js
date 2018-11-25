@@ -18,6 +18,11 @@ function SetAcao(acao, frm) {
     frm.submit();
 }
 
+function SetCodigo(cod, frm) {  
+    frm.cod.value = cod.toString();
+    frm.submit();
+}
+
 function SetAcaoPedido(acao, frm, id, status) {
     frm.cod.value = id;
     frm.acao.value = acao;

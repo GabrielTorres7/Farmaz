@@ -116,11 +116,11 @@ public class ManterPedidoImpl implements ManterPedido {
     }
 
     @Override
-    public List<Pedido> getPedidosByFarmaciaIdAndStatus(Long farmaciaId, char status) throws PersistenciaException {
+    public List<Pedido> getPedidosByFarmaciaIdAndStatus(Long farmaciaId, String status) throws PersistenciaException {
         if (farmaciaId == null) {
             throw new PersistenciaException("O id da farmacia não pode ser nulo");
         }
-        if (status == '\0') {
+        if (status == null) {
             throw new PersistenciaException("O status do pedido não pode ser nulo");
         }
         return pedidoDAO.getPedidosByFarmaciaIdAndStatus(farmaciaId, status);

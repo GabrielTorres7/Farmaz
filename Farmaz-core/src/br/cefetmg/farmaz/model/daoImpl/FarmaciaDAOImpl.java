@@ -91,16 +91,16 @@ public class FarmaciaDAOImpl implements FarmaciaDAO{
             Connection connection = ManterConexao.getInstance().getConnection();
 
             String sql = "UPDATE farmacia "
-                    + " SET cod_cidade = ? "
-                    + "     cod_uf = ? "
-                    + "     cnpj = ? "
-                    + "     nome = ? "
-                    + "     cep = ? "
-                    + "     bairro = ? "
-                    + "     rua = ? "
-                    + "     numero = ? "
-                    + "     email = ? "
-                    + "     senha = ? "
+                    + " SET cod_cidade = ?, "
+                    + "     cod_uf = ?, "
+                    + "     cnpj = ?, "
+                    + "     nome = ?, "
+                    + "     cep = ?, "
+                    + "     bairro = ?, "
+                    + "     rua = ?, "
+                    + "     numero = ?, "
+                    + "     email = ?, "
+                    + "     senha = md5(?) "
                     + " WHERE cadastro_prefeitura = ?";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
