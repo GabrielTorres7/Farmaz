@@ -41,15 +41,28 @@
         <!-- Fixed navbar -->
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
-                <div class="navbar-header">   
+                <div class="navbar-header">
+                    <button type="button" 
+                        class="navbar-toggle collapsed"
+                        data-toggle="collapse"
+                        data-target="#movelMenu"
+                        aria-expanded="false">
+                        
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
                     <a class="navbar-brand" href="/Farmaz-view/ServletWeb?acao=ListarProdutosFarmacia" style="padding-top: 10px;font-size: 33px;">Farmaz</a>                 
                 </div>
-                <div class="navbar-collapse collapse">
+                
+                <div class="navbar-collapse collapse" id="movelMenu">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="SobreNosFarmacia.jsp"></i> Sobre-nós</a></li>
                         <li><a data-toggle="modal" data-target="#faqModal" href="#faqModal">Ajuda</a></li>
                         <li class="active"><a href="/Farmaz-view/ServletWeb?acao=ListarProdutosFarmacia">  Página inicial</a></li>
-                        <li><a href="#"> Perfil</a></li>
+                        <li><a href="/Farmaz-view/ServletWeb?acao=PerfilFarmacia"> Perfil</a></li>
                         <li><a href="/Farmaz-view/ServletWeb?acao=ListarPedidos">Pedidos</a></li>
                         <li><a href="#">Histórico de vendas</a></li>
                         <li><a href="/Farmaz-view/ServletWeb?acao=Sair">Sair</a></li>

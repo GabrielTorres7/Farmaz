@@ -15,6 +15,7 @@ import br.cefetmg.farmaz.proxy.ManterEstadoProxy;
 import br.cefetmg.farmaz.proxy.ManterFarmaciaProxy;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -38,16 +39,25 @@ public class ListarFarmacias {
             ManterEstadoProxy manterEstado = new ManterEstadoProxy();
             ManterCidadeProxy manterCidade = new ManterCidadeProxy();
             
-            listDisponibilidade = manterDisponibilidade.getDisponibilidadeByProdutoId(produtoId);
-            for(Disponibilidade disponibilidade: listDisponibilidade){
-                if(disponibilidade.getEstoque() == 0){
-                    listDisponibilidade.remove(disponibilidade);
-                }else{
-                    listFarmacia.add(manterFarmacia.getFarmaciaById(disponibilidade.getFarmaciaCadastro()));
-                }        
-            }
             List<Endereco> enderecos = manterEndereco.getEnderecosByClienteId(clienteId);
             Endereco endereco = enderecos.get(0);
+            
+            listDisponibilidade = manterDisponibilidade.getDisponibilidadeByProdutoId(produtoId);
+            for(int i=0; i<listDisponibilidade.size(); i++){
+                if(listDisponibilidade.get(i).getEstoque() == 0){
+                    listDisponibilidade.remove(listDisponibilidade.get(i));
+                }else{
+                    listFarmacia.add(manterFarmacia.getFarmaciaById(listDisponibilidade.get(i).getFarmaciaCadastro()));
+                }
+            }
+            
+            //Somente farmácias que estão na mesma cidade do cliente
+            for(int i=0; i<listFarmacia.size(); i++){
+                if(!Objects.equals(listFarmacia.get(i).getCodCidade(), endereco.getCodUf())){
+                    listFarmacia.remove(listFarmacia.get(i));
+                }
+            }
+            
             String enderecoCliente = endereco.getRua()+", "+endereco.getNumero()+" - "+endereco.getBairro()
                     +", "+manterCidade.getCidadeById(endereco.getCodCidade()).getNome()+" - "+manterEstado.getEstadoById(endereco.getCodUf()).getSigla();
             

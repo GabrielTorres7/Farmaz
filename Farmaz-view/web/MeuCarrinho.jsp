@@ -85,7 +85,9 @@
                                     <%=item.getPreco()%>
                                 </td>
                                 <td>
-                                   <input type='button' value='Excluir' onclick='Excluir("<%=item.getId()%>",document.frmCarrinho)'>
+                                   <a href="/Farmaz-view/ServletWeb?acao=ExcluirProdutoCarrinho&cod=<%=item.getId()%>">
+                                        <i class="glyphicon glyphicon-remove"></i>
+                                   </a>
                                 </td> 
       
                             </tr>

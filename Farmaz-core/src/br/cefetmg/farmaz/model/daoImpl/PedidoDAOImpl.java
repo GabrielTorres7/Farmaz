@@ -85,10 +85,10 @@ public class PedidoDAOImpl implements PedidoDAO {
 
             String sql = "UPDATE pedido "
                     + " SET seq_cliente = ?, "
-                    + "     cadastro_prefeitura = ? "
-                    + "     data = ? "
-                    + "     status = ? "
-                    + "     troco = ? "
+                    + "     cadastro_prefeitura = ?, "
+                    + "     data = ?, "
+                    + "     status = ?, "
+                    + "     troco = ?, "
                     + "     valor = ? "
                     + " WHERE seq_pedido = ?";
 

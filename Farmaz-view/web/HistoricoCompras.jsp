@@ -4,6 +4,9 @@
     Author     : Gabriel
 --%>
 
+<%@page import="br.cefetmg.farmaz.model.dominio.ItemPedido"%>
+<%@page import="br.cefetmg.farmaz.proxy.ManterProdutoProxy"%>
+<%@page import="br.cefetmg.farmaz.proxy.ManterItemPedidoProxy"%>
 <%@page import="br.cefetmg.farmaz.proxy.ManterFarmaciaProxy"%>
 <%@page import="java.util.Collections"%>
 <%@page import="br.cefetmg.farmaz.model.dominio.Farmacia"%>
@@ -82,7 +85,7 @@
                                     <%=pedido.getValor()%>
                                 </td>
                                 <td>
-                                    <a href="/Farmaz-view/ServletWeb?acao=ItensPedido&Pedido=<%=pedido.getPedidoId()%>">Itens</a>
+                                    <a data-toggle="modal" data-target="#itensModal<%=pedido.getPedidoId()%>" href="#itensModal<%=pedido.getPedidoId()%>">Itens</a>
                                 </td> 
       
                             </tr>
@@ -98,5 +101,53 @@
                 </div>    
             </form>
         </div>
+                   
+        <% for(Pedido pedido: historico){%>
+            <div class="modal fade" id="itensModal<%=pedido.getPedidoId()%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel" style="text-align: center">Itens do pedido</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row centered">
+                                <table class="table table-striped"> 
+                                <tr>
+                                    <td>
+                                        Produto
+                                    </td>
+                                    <td>
+                                        Quantidade
+                                    </td>
+                                </tr>
+                                <%
+                                    ManterItemPedidoProxy manterItemPedido = new ManterItemPedidoProxy();
+                                    ManterProdutoProxy manterProduto = new ManterProdutoProxy();
+                                    ItemPedido itemPedido = new ItemPedido();
+                                    List<ItemPedido> listItens = manterItemPedido.getItensPedidoByPedidoId(pedido.getPedidoId());
+                                    for(int i=0; i<listItens.size(); i++){
+                                        itemPedido = listItens.get(i);
+                                        %>
+                                        <tr>
+                                            <td>
+                                                <%=manterProduto.getProdutoById(itemPedido.getProdutoId()).getNome()%>
+                                            </td>
+                                            <td>
+                                                <%=itemPedido.getQuantidade()%>
+                                            </td>
+                                        </tr>
+                                        <% }
+
+                                        %>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+            <!-- /.modal-dialog -->
+            </div>
+        <%}%>
     </body>
 </html>

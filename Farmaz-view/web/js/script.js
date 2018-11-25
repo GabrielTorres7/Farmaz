@@ -17,3 +17,10 @@ function SetAcao(acao, frm) {
     frm.acao.value = acao;
     frm.submit();
 }
+
+function SetAcaoPedido(acao, frm, id, status) {
+    frm.cod.value = id;
+    frm.acao.value = acao;
+    frm.status.value = status;
+    frm.submit();
+}

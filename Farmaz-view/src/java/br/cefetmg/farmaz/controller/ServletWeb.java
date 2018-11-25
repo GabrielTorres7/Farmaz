@@ -50,8 +50,6 @@ public class ServletWeb extends HttpServlet {
             jsp = "Faq.jsp";
         else if(acao.equals("Historico"))
             jsp = HistoricoCompras.executa(request);
-        else if(acao.equals("ItensPedido"))
-            jsp = "";
         else if(acao.equals("ListarProdutosFarmacia"))
             jsp = ListarProdutosFarmacia.executa(request);
         else if(acao.equals("InserirProduto"))
@@ -72,6 +70,8 @@ public class ServletWeb extends HttpServlet {
             jsp = PerfilFarmacia.executa(request);
         else if(acao.equals("AtualizarPerfilFarmacia"))
             jsp = AtualizarPerfilFarmacia.executa(request);
+        else if(acao.equals("AlterarStatusPedido"))
+            jsp = AlterarStatusPedido.executa(request);
         
             RequestDispatcher rd = request.getRequestDispatcher(jsp);
             rd.forward(request, response);  

@@ -20,6 +20,8 @@
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <title>Farmaz</title>
         <script src="js/jquery.js" type="text/javascript"></script>
+        <script src="js/script.js" type="text/javascript"></script>
+        <link href="npm.js" rel="stylesheet" type="text/javascript">
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="css/estilo.css" rel="stylesheet" type="text/css">
     </head>
@@ -58,9 +60,6 @@
                         <td>
                             Tempo estimado de entrega
                         </td>
-                        <td>
-                            Avaliacao
-                        </td>
                     </tr>
                     <%
                         List<Farmacia> listFarmacia = (List<Farmacia>) request.getAttribute("farmacias");
@@ -95,13 +94,10 @@
                                     <%=listDisponibilidade.get(i).getPreco()%>                                    
                                 </td>
                                  <td>
-                                    <div><span id="<%="distancia"+i%>">&nbsp;</span></div>
+                                    <div><span id='<%="distancia"+i%>'>&nbsp;</span></div>
                                 </td>
                                  <td>
-                                    <div><span id="<%="tempo"+i%>">&nbsp;</span></div>                                    
-                                </td>
-                                <td>
-                                    <%=listDisponibilidade.get(i).getAvaliacao()%>
+                                    <div><span id='<%="tempo"+i%>'>&nbsp;</span></div>                                    
                                 </td>
                             </tr>
                     <%  } %>
@@ -112,45 +108,44 @@
         <script type="text/javascript">
             <%
             for(int i=0; i<listFarmacia.size(); i++){
-            %>
-            CalculaDistancia("<%= listFarmacia.get(i).getRua()+", "+listFarmacia.get(i).getNumero()+" - "+listFarmacia.get(i).getBairro()
-                    +", "+manterCidade.getCidadeById(listFarmacia.get(i).getCodCidade()).getNome()+" - "+manterEstado.getEstadoById(listFarmacia.get(i).getCodUf()).getSigla()%>");
-                  
-            function CalculaDistancia(destino) {
+                %>
+                    CalculaDistancia("<%= listFarmacia.get(i).getRua()+", "+listFarmacia.get(i).getNumero()+" - "+listFarmacia.get(i).getBairro()
+                                            +", "+manterCidade.getCidadeById(listFarmacia.get(i).getCodCidade()).getNome()+" - "+manterEstado.getEstadoById(listFarmacia.get(i).getCodUf()).getSigla()%>", <%=i%>);      
+            
+            <%}%>
+            
+            function CalculaDistancia(destino, i) {
                 //Instanciar o DistanceMatrixService
                 var service = new google.maps.DistanceMatrixService();
                 //executar o DistanceMatrixService
                 service.getDistanceMatrix(
-                  {
-                      //Origem
-                      origins: ["<%=(String) request.getAttribute("enderecoCliente") %>"],
-                      //Destino
-                      destinations: [destino],
-                      //Modo (DRIVING | WALKING | BICYCLING)
-                      travelMode: google.maps.TravelMode.DRIVING,
-                      //Sistema de medida (METRIC | IMPERIAL)
-                      unitSystem: google.maps.UnitSystem.METRIC
-                      //Vai chamar o callback
-                  }, callback);
+                    {
+                        //Origem
+                        origins: ["<%=(String) request.getAttribute("enderecoCliente") %>"],
+                        //Destino
+                        destinations: [destino],
+                        //Modo (DRIVING | WALKING | BICYCLING)
+                        travelMode: google.maps.TravelMode.DRIVING,
+                        //Sistema de medida (METRIC | IMPERIAL)
+                        unitSystem: google.maps.UnitSystem.METRIC
+                        //Vai chamar o callback
+                    }, callback);
+                    function callback(response, status) {
+                        //Verificar o Status
+                        if (status !== google.maps.DistanceMatrixStatus.OK)
+                            //Se o status não for "OK"
+                            alert('Parametros do maps incorretos.');
+                        else {
+                            //Se o status for OK
+                            //Endereço de origem = response.originAddresses
+                            //Endereço de destino = response.destinationAddresses
+                            //Distância = response.rows[0].elements[0].distance.text
+                            //Duração = response.rows[0].elements[0].duration.text
+                            $("#distancia"+i).html(response.rows[0].elements[0].distance.text);
+                            $("#tempo"+i).html(response.rows[0].elements[0].duration.text);
+                        }
+                    }  
             }
-            //Tratar o retorno do DistanceMatrixService
-            function callback(response, status) {
-                //Verificar o Status
-                if (status !== google.maps.DistanceMatrixStatus.OK)
-                    //Se o status não for "OK"
-                    alert('Parametros do maps incorretos.');
-                else {
-                    //Se o status for OK
-                    //Endereço de origem = response.originAddresses
-                    //Endereço de destino = response.destinationAddresses
-                    //Distância = response.rows[0].elements[0].distance.text
-                    //Duração = response.rows[0].elements[0].duration.text
-                    $('#<%="distancia"+i%>').html(response.rows[0].elements[0].distance.text);
-                    $('#<%="tempo"+i%>').html(response.rows[0].elements[0].duration.text);
-                }
-            }
-                     
-            <% }  %>
         </script>
     </body>
 </html>

@@ -27,8 +27,15 @@ public class FinalizarCompra {
             ManterDisponibilidadeProxy manterDisponibilidade = new ManterDisponibilidadeProxy();
             Disponibilidade item = new Disponibilidade();
             List<Disponibilidade> carrinho;
+            String qtd = request.getParameter("quantidadeProduto");
             
             if("Mapa".equals(request.getParameter("ultimoJsp"))){
+                if(qtd == null || qtd.equals("")){
+                    String erro = "Quantidade não pode ser 0!";
+                    request.setAttribute("erro", erro);
+                    jsp = "/Erro.jsp";
+                    return jsp;                
+                }
                 item = manterDisponibilidade.getDisponibilidadeById(Long.parseLong(request.getParameter("disponibilidadeId")));
                 item.setEstoque(Integer.parseInt(request.getParameter("quantidadeProduto")));
                 item.setPreco(item.getPreco() * item.getEstoque());

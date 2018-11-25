@@ -61,9 +61,6 @@
                         <td>
                             Preço
                         </td>
-                        <td>
-                            Avaliação
-                        </td>
                     </tr>
                     <%
 
@@ -97,9 +94,6 @@
                         </td>
                         <td>
                             <%=disponibilidade.getPreco()%>
-                        </td>
-                        <td>
-                            <%=disponibilidade.getAvaliacao()%>
                         </td>
                         <td>
                             <a href="/Farmaz-view/ServletWeb?acao=EditarProduto&CodProduto=<%=disponibilidade.getId()%>">
