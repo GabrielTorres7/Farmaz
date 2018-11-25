@@ -5,220 +5,244 @@
 * License: https://templatemag.com/license/
 */
 
+/*
+*    HEX code - Farmaz logo
+
+*    Vermelho claro: #E65454 / rgb(230,84,84)
+*    Vermelho escuro: #943E3C / rgb(148,62,60)
+*
+*    Azul claro: #1474C0 / rgb(20,116,192)
+*    Azul  escuro: #13517F / rgb(19,81,127)
+*/
+
 body {
-  background-color: #f2f2f2;
-  font-family: "Lato";
-  font-weight: 300;
-  font-size: 16px;
-  color: #555;
-  -webkit-font-smoothing: antialiased;
-  -webkit-overflow-scrolling: touch;
-  margin-top: 70px;
+    background-color: #f2f2f2;
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 16px;
+    color: #555;
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 70px;
+}
+
+.btn.btn-primary.btn-block{
+    background: #1474C0;
+    height: 50px; 
+    font-size: 1.30em;
+    font-weight: bold;
+    font-family: "Lato";
+    letter-spacing: 3px;
+    box-shadow: 0px 4px 0px 0px #13517F;
 }
 
 /* Titles */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway";
-  font-weight: 300;
-  color: #333;
+    font-family: "Raleway";
+    font-weight: 300;
+    color: #333;
 }
 
 /* Paragraph & Typographic */
 
 p {
-  line-height: 28px;
-  margin-bottom: 25px;
+    line-height: 28px;
+    margin-bottom: 25px;
 }
 
 .centered {
-  text-align: center;
+    text-align: center;
 }
 
 /* Links */
 
 a {
-  color: #c84c4c;
-  word-wrap: break-word;
-  transition: color 0.1s ease-in, background 0.1s ease-in;
+    color: #E65454;
+    word-wrap: break-word;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
 }
 
 a:hover, a:focus {
-  color: #8b3d3d;
-  text-decoration: none;
-  outline: 0;
+    color: #8b3d3d;
+    text-decoration: none;
+    outline: 0;
 }
 
 a:before, a:after {
-  transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
 }
 
 hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
 }
 
 .navbar-brand {
-  padding: 0px; /* firefox bug fix */
+    padding: 0px; /* firefox bug fix */
 }
 .navbar-brand>img {
-  height: 100%;
-  padding: 15px; /* firefox bug fix */
-  width: auto;
+    height: 100%;
+    padding: 15px; /* firefox bug fix */
+    width: auto;
 }
 
 .navbar {
-  font-weight: 800;
-  font-size: 14px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+    font-weight: 800;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .navbar-inverse {
-  background: #2d2d2d;
-  border-color: #2d2d2d;
-  font-size: 1.0em;
+    background: #2d2d2d;
+    border-color: #2d2d2d;
+    font-size: 1.0em;
 }
 
 .navbar-inverse .navbar-nav>.active>a {
-  background: #ff7878;
- border-radius: 5px 5px 10px 10px;
+    background: #E65454;
+    border-radius: 5px 5px 10px 10px;
 }
 
 .navbar-inverse .navbar-brand {
-  color: #ffffff;
-  font-weight: bolder;
-  font-size: 22px;
-  letter-spacing: 1px;
+    color: #ffffff;
+    font-weight: bolder;
+    font-size: 22px;
+    letter-spacing: 1px;
 }
 
 .navbar-inverse .navbar-brand i {
-  color: #ff7878;
-  font-size: 22px;
-  letter-spacing: 1px;
+    color: #ff7878;
+    font-size: 22px;
+    letter-spacing: 1px;
 }
 
 /*TILT*/
 
 .tilt {
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .tilt:hover {
-  -webkit-transform: rotate(-10deg);
-  -moz-transform: rotate(-10deg);
-  -o-transform: rotate(-10deg);
-  -ms-transform: rotate(-10deg);
-  transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    transform: rotate(-10deg);
 }
+
+#error {
+    background-image: linear-gradient(to bottom, #E65454, #943E3C);
+}
+
 
 /* ==========================================================================
    Wrap Sections
    ========================================================================== */
 
 #headerwrap{
-  background: url(../images/bg.jpg) no-repeat center top;
-  margin-top: -70px;
-  padding-top: 20px;
-  text-align: center;
-  background-attachment: relative;
-  background-position: center center;
-  min-height: 500px;
-  width: 100%;
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  -o-background-size: 100%;
-  background-size: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    background: url(../images/bg.jpg) no-repeat center top;
+    margin-top: -70px;
+    padding-top: 20px;
+    text-align: center;
+    background-attachment: relative;
+    background-position: center center;
+    min-height: 500px;
+    width: 100%;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 #headerwrap h1 {
-  margin-top: 100px;
-  color: white;
-  font-size: 70px;
-  font-weight: 300;
-  letter-spacing: 3px;
+    margin-top: 100px;
+    color: white;
+    font-size: 70px;
+    font-weight: 300;
+    letter-spacing: 3px;
 }
 
 #headerwrap h2 {
-  color: white;
-  font-size: 40px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 @media (max-width: 768px ) {
-  #headerwrap {
-    font-size: 50px;
-  }
+    #headerwrap {
+        font-size: 50px;
+    }
 
-  #headerwrap-1{
-    font-size: 30px;
-  }
+    #headerwrap-1{
+        font-size: 30px;
+    }
 }
 
 /* Dark Grey Wrap */
 
 #dg {
-  background: #e0e0e0;
-  padding-top: 70px;
-  padding-bottom: 70px;
-  text-align: center;
+    background: #e0e0e0;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    text-align: center;
 }
 
 #dg h4 {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 /* Light Grey */
 
 #lg {
-  background: #ebebeb;
-  padding-top: 70px;
-  padding-bottom: 70px;
-  text-align: center;
+    background: #ebebeb;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    text-align: center;
 }
 
 #lg h4 {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 /* Red Wrap */
 
 #r {
-  background: #ff7878;
-  padding-top: 35px;
-  padding-bottom: 35px;
+    background: #ff7878;
+    padding-top: 35px;
+    padding-bottom: 35px;
 }
 
 #r h4 {
-  color: white;
-  font-weight: 700;
+    color: white;
+    font-weight: 700;
 }
 
 #r p {
-  color: white;
+    color: white;
 }
 
 /* Blue Wrap */
 
 #blue {
-  background-image: linear-gradient(to bottom,  #3498db, #4aa3df);
-  padding-top: 35px;
-  padding-bottom: 35px;
-  margin-top: -70px;
+    background-image: linear-gradient(to bottom, #3083bb, #57bbff);
+    padding-top: 35px;
+    padding-bottom: 35px;
 }
 
 #blue h1 {
@@ -229,363 +253,381 @@ hr {
     font-weight: 700;
 }   
 #blue h4 {
-  color: white;
-  font-weight: 700;
+    color: white;
+    font-weight: 700;
 }
 
 #blue p {
-  color: white;
+    color: white;
 }
 
 /* Footer Wrap */
 
 #f {
-  background: #2d2d2d;
-  padding-top: 30px;
-  padding-bottom: 30px;
+    background: #2d2d2d;
+    padding-top: 30px;
+    padding-bottom: 30px;
 
 }
 
 #f i {
-  color: #bdbdbd;
-  font-size: 30px;
-  padding: 20px;
+    color: #bdbdbd;
+    font-size: 30px;
+    padding: 20px;
 }
 
 #f i:hover {
-  color: #ff7878;
+    color: #ff7878;
 }
 
 /****** SECTIONS *****/
 
 .w {
-  padding-top: 35px;
-  padding-bottom: 35px;
+    padding-top: 35px;
+    padding-bottom: 35px;
 }
 
 .w h4 {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 .w i {
-  color: #ff7878;
-  font-size: 30px;
+    color: #ff7878;
+    font-size: 30px;
 }
 
 .wb {
-  padding-top: 35px;
-  margin-bottom: 0px;
+    padding-top: 35px;
+    margin-bottom: 0px;
 }
 
 .wb h4 {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 .desc {
-  padding-top: 35px;
+    padding-top: 35px;
 }
 
 .desc h4 {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 .desc i {
-  color: #ff7878;
-  font-size: 12px;
-  padding: 5px;
+    color: #ff7878;
+    font-size: 12px;
+    padding: 5px;
 }
 
-/***** MODAL CONTACT - NÃO UTILIZADO -  *****/ 
+/***** MODAL   *****/ 
 
 .modal-content {
-  border-radius: 0px;
+    border-radius: 5px;
 }
 
 .modal-header {
-  background: #bdbdbd;
-  color: white;
+    background: #bdbdbd;
+    color: white;
+
 }
 
 .modal-header h4 {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 .modal-body {
-  background: #f2f2f2;
-  font-family: "Lato";
-  font-weight: 300;
-  font-size: 16px;
-  color: #555;
+    background: #f2f2f2;
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 20px;
+    color: #555;
 }
 
 .modal-footer {
-  background: #f2f2f2;
-  margin-top: 0px;
+    background: #f2f2f2;
+    margin-top: 0px;
 }
+
+.box { 
+    display: -webkit-flex; 
+    display: -ms-flexbox; 
+    display: flex; 
+    overflow: hidden;
+}
+.box .column { 
+    flex: 1; 
+    background: #aaa;
+    margin-right: 10px;
+    padding: 15px;
+}
+
 
 /* ==========================================================================
    Pricing Tables
    ========================================================================== */
 
 .pricing-option {
-  padding-bottom: 40px;
-  min-width: 360px;
-  min-height: 375px;
+    padding-bottom: 40px;
+    min-width: 360px;
+    min-height: 375px;
+
+    display: table-cell;
 }
 
 .pricing-option .pricing-top {
-  position: relative;
-  background: #222;
-  color: white;
-  text-align: center;
-  font-weight: bold;
-  padding: 40px 20px 30px 20px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+    position: relative;
+    background: #222;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 40px 20px 30px 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .pricing-option .pricing-top .special-label {
-  display: block;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #1abc9c;
-  text-transform: uppercase;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 3px 0;
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #1abc9c;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 3px 0;
 }
 
 .special .pricing-top {
-  background: black;
+    background: black;
 }
 
 .pricing-option .pricing-edition {
-  text-transform: uppercase;
-  display: block;
-  font-size: 25px;
-  letter-spacing: 8px;
-  padding-bottom: 20px;
+    text-transform: uppercase;
+    display: block;
+    font-size: 25px;
+    letter-spacing: 8px;
+    padding-bottom: 20px;
 }
 
 .pricing-option .price {
-  display: inline-block;
-  position: relative;
+    display: inline-block;
+    position: relative;
 }
 
 .pricing-option .price sup {
-  position: absolute;
-  top: 50px;
-  left: -10px;
-  font-size: 24px;
+    position: absolute;
+    top: 50px;
+    left: -10px;
+    font-size: 24px;
 }
 
 .pricing-option .price .price-amount {
-  font-size: 108px;
-  letter-spacing: -4px;
+    font-size: 108px;
+    letter-spacing: -4px;
 }
 
 .pricing-option .price small {
-  position: relative;
-  left: -10px;
-  font-size: 18px;
+    position: relative;
+    left: -10px;
+    font-size: 18px;
 }
 
 .pricing-option ul {
-  list-style: none;
-  margin: 0;
-  background: #eee;
-  text-align: center;
-  padding-left: 0px;
+    list-style: none;
+    margin: 0;
+    background: #eee;
+    text-align: center;
+    padding-left: 0px;
 }
 
 .pricing-option ul li {
-  border-bottom: solid 1px #e1e1e1;
-  padding-top: 20px;
-  padding-bottom: 20px;
+    border-bottom: solid 1px #e1e1e1;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .pricing-option .pricing-signup {
-  display: block;
-  text-align: center;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 15px 10px;
-  color: white;
-  background: #1abc9c;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 10px;
+    color: white;
+    background: #1474C0;
 }
 
 .pricing-option .pricing-signup:hover {
-  background: #ff7878;
+    background: #13517F;
 }
 
 /* Contact Form */
 
 .contact-form {
-  text-align: left;
-  padding: 0 15px;
+    text-align: left;
+    padding: 0 15px;
 }
 
 .contact-form label {
-   color: #999;
+    color: #999;
 }
 
 .contact-form input, .contact-form textarea {
-  padding: 10px 12px;
-  border-radius: 0;
-  box-shadow: none;
-  font-size: 14px;
-  height: auto;
+    padding: 10px 12px;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+    height: auto;
 }
 
 .contact-form .form-send {
-  text-align: center;
+    text-align: center;
 }
 
 .contact-form .form-send button  {
-  background: #d9534f;
-  border: 0;
-  padding: 10px 30px;
-  color: #fff;
-  transition: 0.4s;
-  cursor: pointer;
+    background: #d9534f;
+    border: 0;
+    padding: 10px 30px;
+    color: #fff;
+    transition: 0.4s;
+    cursor: pointer;
 }
 
 .contact-form .form-send button:hover {
-  background: #e65f5b;
+    background: #e65f5b;
 }
 
 .contact-form .validate {
-  display: none;
-  color: red;
-  margin: 0 0 15px 0;
-  font-weight: 400;
-  font-size: 13px;
+    display: none;
+    color: red;
+    margin: 0 0 15px 0;
+    font-weight: 400;
+    font-size: 13px;
 }
 
 .contact-form .loading {
-  display: none;
-  color: #555;
-  background: #fff;
-  text-align: center;
-  padding: 15px;
-  margin: 15px 0;
+    display: none;
+    color: #555;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+    margin: 15px 0;
 }
 
 .contact-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  border: 3px solid #18d26e;
-  border-top-color: #eee;
-  -webkit-animation: animate-loading 1s linear infinite;
-  animation: animate-loading 1s linear infinite;
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    border: 3px solid #18d26e;
+    border-top-color: #eee;
+    -webkit-animation: animate-loading 1s linear infinite;
+    animation: animate-loading 1s linear infinite;
 }
 
 @-webkit-keyframes animate-loading {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
 
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes animate-loading {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
 
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
 
 .contact-form .error-message {
-  display: none;
-  color: #fff;
-  background: #ed3c0d;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-  margin: 15px 0;
+    display: none;
+    color: #fff;
+    background: #ed3c0d;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+    margin: 15px 0;
 }
 
 .contact-form .sent-message {
-  display: none;
-  color: #fff;
-  background: #18d26e;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-  margin: 15px 0;
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+    margin: 15px 0;
 }
 
 /*Login modal*/
 .sign-up-modal p,
 .sign-up-modal .form-checkbox label {
-		font-size: 1em;
-		font-weight: 300;
+    font-size: 1em;
+    font-weight: 300;
 }
 
 .sign-up-modal .form-checkbox label {
-		cursor: pointer;
+    cursor: pointer;
 }
 
 .logo {
-		fill: #FEFEFE;
+    fill: #FEFEFE;
 }
 
 .logo-container {
-		width: 100%;
-		margin-top: 50px;
-		position: relative;
-		text-align: center;
+    width: 100%;
+    margin-top: 50px;
+    position: relative;
+    text-align: center;
 }
 
+
 .sign-up-modal {    
-		color: #fefefe;
-		border-style: solid;
-		border-width: 10px;
-		border-color: rgb(254, 254, 254);
-                    border-radius: 10px 150px 150px 10px;
-		background-image: -moz-linear-gradient( 90deg, rgb(255, 119, 120) 0%, rgb(255,167,168) 100%);
-		background-image: -webkit-linear-gradient( 90deg, rgb(255, 119, 120) 0%, rgb(255,167,168) 100%);
-		background-image: -ms-linear-gradient( 90deg, rgb(255, 119, 120) 0%, rgb(255,167,168) 100%);
-		width: 90%;
-		min-width: 400px;
-		max-width: 700px;
-		margin: 0 auto;
-		padding: 25px;
+    color: #fefefe;
+    border-style: solid;
+    border-width: 10px;
+    border-color: rgb(254, 254, 254);
+    border-radius: 120px 120px 120px 120px;
+    background-image: -moz-linear-gradient( -90deg, rgb(230,84,84) 0%, rgb(148,62,60) 100%);
+    background-image: -webkit-linear-gradient( -90deg, rgb(230,84,84) 0%, rgb(148,62,60) 100%);
+    background-image: -ms-linear-gradient( -90deg, rgb(230,84,84) 0%, rgb(148,62,60) 100%);
+    width: 90%;
+    min-width: 400px;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 25px;
 }
 
 .sign-up-modal form {
-		margin: 0 auto;
-		text-align: center;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .sign-up-modal input::-webkit-input-placeholder {
-		color: #fefefe;
-		opacity: 1;
+    color: #fefefe;
+    opacity: 1;
 }
 
 .sign-up-modal input:focus::-webkit-input-placeholder {
-		color: #111;
-		opacity: .5;
-		transition: all 0.3s ease;
+    color: #111;
+    opacity: .5;
+    transition: all 0.3s ease;
 }
 
 .sign-up-modal .input-container {
-		margin: 10px;
+    margin: 10px;
 }
 
 .sign-up-modal input[type="email"],
@@ -595,7 +637,7 @@ hr {
 .sign-up-modal input[type="password"],
 .sign-up-modal input[type="checkbox"]:focus,
 .sign-up-modal input[type="submit"]:focus {
-		outline: 0;
+    outline: 0;
 }
 
 .sign-up-modal input[type="email"],
@@ -603,14 +645,14 @@ hr {
 .sign-up-modal input[type="tel"],
 .sign-up-modal input[type="number"],
 .sign-up-modal input[type="password"] {
-		font-weight: 700;
-		font-size: 1.4em;
-		padding: 10px;
-		border-width: 2px;
-		border-color: rgba(247, 247, 247, .3);
-		border-style: solid;
-                border-radius: 10px 10px 10px 10px;
-		background: url('transparent');
+    font-weight: 700;
+    font-size: 1.4em;
+    padding: 10px;
+    border-width: 2px;
+    border-color: rgba(247, 247, 247, .3);
+    border-style: solid;
+    border-radius: 10px 10px 10px 10px;
+    background: url('transparent');
 }
 
 .sign-up-modal input[type="email"]:focus,
@@ -618,84 +660,84 @@ hr {
 .sign-up-modal input[type="number"],
 .sign-up-modal input[type="tel"],   
 .sign-up-modal input[type="password"]:focus {
-		background: white;
-		transition: all 0.3s ease;
-		color: #222;
+    background: white;
+    transition: all 0.3s ease;
+    color: #222;
 }
 
 .sign-up-modal input[type="checkbox"] {
-		-webkit-appearance: none;
-		background-color: #fefefe;
-		display: inline-block;
-		position: relative;
-		padding: 6px;
-		margin-left: -6px;
-		margin-top: 25px;
-		cursor: pointer;
+    -webkit-appearance: none;
+    background-color: #fefefe;
+    display: inline-block;
+    position: relative;
+    padding: 6px;
+    margin-left: -6px;
+    margin-top: 25px;
+    cursor: pointer;
 }
 
 .sign-up-modal input[type="checkbox"]:checked:after {
-		content: '\2714';
-		font-size: 13px;
-		position: absolute;
-		top: -2px;
-		left: 2px;
-		color: #111;
+    content: '\2714';
+    font-size: 13px;
+    position: absolute;
+    top: -2px;
+    left: 2px;
+    color: #111;
 }
 
 .sign-up-modal a {
-		color: #fefefe;
-		text-decoration: underline;
+    color: #fefefe;
+    text-decoration: underline;
 }
 
 .sign-up-modal p {
-		font-size: 1.1em;
+    font-size: 1.1em;
 }
 
 .sign-up-modal a:hover {
-		color: #d26960;
+    color: #d26960;
 }
 
 .sign-up-modal input[type="submit"] {
-		font-weight: 700;
-		font-size: 1.8em;
-		color: #111;
-		background: #fefefe;
-		box-shadow: 0px 4px 0px 0px #d26a60;
-		border-style: none;
-                border-radius: 10px 10px 10px 10px;
-		padding: 10px 50px;
-		margin: 25px 0 15px 0;
-		position: relative;
-		display: inline-block;
-		transition: all .1s linear;
+    font-weight: 700;
+    font-size: 1.8em;
+    color: #111;
+    background: #fefefe;
+    box-shadow: 0px 4px 0px 0px #d26a60;
+    border-style: none;
+    border-radius: 10px 10px 10px 10px;
+    padding: 10px 50px;
+    margin: 25px 0 15px 0;
+    position: relative;
+    display: inline-block;
+    transition: all .1s linear;
 }
 
 .sign-up-modal input[type="submit"]:active {
-		box-shadow: 0 2px 0 #d26a60;
-		transform: translateY(3px);
-		-webkit-transform: translateY(3px);
-		-ms-transform: translateY(3px);
+    box-shadow: 0 2px 0 #d26a60;
+    transform: translateY(3px);
+    -webkit-transform: translateY(3px);
+    -ms-transform: translateY(3px);
 }
 
 @media only screen and (min-width: 960px) {
-		.sign-up-modal .form-checkbox {
-				text-align: left;
-		}
-		.sign-up-modal .password-input {
-				width: 47.5%;
-				margin-left: -11.5%;
-		}
-		.sign-up-modal .username-input {
-				width: 47.5%;
-		}
-		.sign-up-modal .email-input {
-				margin-bottom: 20px;
-				margin-top: 50px;
-		}
-		.sign-up-modal form {
-				width: 80%;
-		}
+    .sign-up-modal .form-checkbox {
+        text-align: left;
+    }
+    .sign-up-modal .password-input {
+        width: 47.5%;
+        margin-left: -11.5%;
+    }
+    .sign-up-modal .username-input {
+        width: 47.5%;
+    }
+    .sign-up-modal .email-input {
+        margin-bottom: 20px;
+        margin-top: 50px;
+    }
+    .sign-up-modal form {
+        width: 80%;
+    }
 }
 
 
@@ -703,22 +745,22 @@ hr {
 /* Copyrights */
 
 #copyrights {
-  background: #222222;
-  padding: 20px 0;
-  text-align: center;
-  color: #fff;
+    background: #222222;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
 
-  position: static;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
+    position: static;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
 }
 
 #copyrights p {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 .credits {
-  color: #999;
+    color: #999;
 }
