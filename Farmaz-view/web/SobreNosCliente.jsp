@@ -39,18 +39,7 @@
 
     </head>
     <body>
-        <div id="blue">
-            <div class="container">
-                <div class="row centered">
-                    <div class="col-lg-9 col-lg-offset-2">
-                        <h1>Nossa equipe de desenvolvimento.</h1>
-                        <h2>Who are those guys ?</h2>
-                    </div>
-                </div>
-                <!-- row -->
-            </div>
-            <!-- container -->
-        </div>
-
+        <jsp:include page ="SobreNos.jsp"/>
+        <jsp:include page ="Rodape.jsp"/>
     </body>
 </html>

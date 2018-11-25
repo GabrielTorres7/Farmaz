@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <jsp:include page ="MenuCliente.jsp"/>
+    
     <head>
         <meta charset="utf-8">
         <title>Farmaz</title>
@@ -42,7 +42,7 @@
         <div id="blue">
             <div class="container">
                 <div class="row centered">
-                    <div class="col-lg-9 col-lg-offset-2">
+                    <div class="col-lg-8 col-lg-offset-2">
                         <h1>Nossa equipe de desenvolvimento.</h1>
                         <h2>Who are those guys ?</h2>
                     </div>
@@ -52,5 +52,104 @@
             <!-- container -->
         </div>
 
+        <div class="container w">
+            <div class="row centered"     style="display: flex;
+  width: 100%;">
+                <br><br>
+                <div class="col-lg-3" style="flex: 1;">
+                    <!--A IMAGEM TEM QUE SER 150px/150px -->
+                    <img class="img-circle" src="images/perfil1.png" width="110" height="110" alt="">
+                    <h4>Allan Barbosa</h4>
+                    <p>Desenvolvedor Front-end, Designer nas horas vagas e melhor Quarter-Back do  meu bairro   </p>
+                    <p><a href="https://github.com/AllanBarbo">@AllanBarbo</a></p>
+                </div>
+                <!-- col-lg-3 -->
+
+                <div class="col-lg-3" style="flex: 1;">
+                    <img class="img-circle"  src="images/bg.jpg" width="110" height="110" alt="">
+                    <h4>Arthur Codama</h4>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+                    <p><a href="https://github.com/ArthurCodama">@ArthurCodama</a></p>
+                </div>
+                <!-- col-lg-3 -->
+
+                <div class="col-lg-3" style="flex: 1;">
+                    <img class="img-circle"  src="images/bg.jpg" width="110" height="110" alt="">
+                    <h4>Gabriel Torres</h4>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+                    <p><a href="https://github.com/GabrielTorres7">@GabrielTorres7</a></p>
+                </div>
+                <!-- col-lg-3 -->
+
+                <div class="col-lg-3" style="flex: 1;">
+                    <img class="img-circle"  src="images/bg.jpg" width="110" height="110" alt="">
+                    <h4>Hiago Martins</h4>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+                    <p><a href="https://github.com/Hiagozeroum">@Hiagozeroum</a></p>
+                </div>
+                <!-- col-lg-3 -->
+                
+                <div class="col-lg-3" style="flex: 1;">
+                    <img class="img-circle"  src="images/bg.jpg" width="110" height="110" alt="">
+                    <h4>Pedro Henrique</h4>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+                    <p><a href="https://github.com/PedroHenriqueV">@PedroHenriqueV</a></p>
+                </div>
+                <!-- col-lg-3 -->
+
+            </div>
+            <!-- row -->
+            <br>
+            <br>
+        </div>
+        <!-- container -->
+
+
+        <!-- PORTFOLIO SECTION -->
+        <div id="dg">
+            <div class="container">
+                <div class="row centered">
+                    <h3><b>Nossas habilidades</b></h3>
+                    <br>
+
+                    <!-- First Chart -->
+                    <div class="col-lg-4">
+                        <canvas id="canvas" height="130" width="130"></canvas>
+                        <br>
+                        <p><b>Design & Marca</b></p>
+                        <p><small>O Farmaz possui um logo simples, objetivo e minimalista, assim como o nosso site </small></p>
+                    </div>
+                    <!-- /col-lg-3 -->
+
+                    <!-- Second Chart -->
+                    <div class="col-lg-4">
+                        <canvas id="canvas2" height="130" width="130"></canvas>
+                        <br>
+                        <p><b>Desenvolvimento WEB</b></p>
+                        <p><small>Nos demos aula na programação para web com site bonito, minimalista e responsivo</small></p>
+                    </div>
+                    <!-- /col-lg-3 -->
+
+                    <!-- Third Chart -->
+                    <div class="col-lg-4">
+                        <canvas id="canvas3" height="130" width="130"></canvas>
+                        <br>
+                        <p><b>Back-end</b></p>
+                        <p><small>Banco de dados postgres, Back-end em java usando servlets</small></p>
+                    </div>
+                    <!-- /col-lg-3 -->
+
+
+
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        
+        
+        <!-- Template Main Javascript File -->
+        <script src="js/main.js"></script>
+        
     </body>
 </html>
