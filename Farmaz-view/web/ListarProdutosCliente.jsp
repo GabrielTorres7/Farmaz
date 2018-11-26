@@ -64,7 +64,7 @@
                         <div class="col-lg-4" style="flex: 1;">
                             <!-- START PRICING TABLE -->
                             <div class="pricing-option">
-                                <div class="pricing-top">
+                                <div class="pricing-top" style="width: 360px; height: 220px">
                                     <span class="pricing-edition">
                                         <a href="/Farmaz-view/ServletWeb?acao=ListarFarmaciasComProduto&CodProduto=<%=produto.getId()%>"> <%=produto.getNome()%></a></span>
                                     </span>

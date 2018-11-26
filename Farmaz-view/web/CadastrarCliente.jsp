@@ -163,7 +163,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-xs-9 col-sm-offset-2" style="padding-top: 5px;">
-                        <a href="/Farmaz-view/ServletWeb?acao=Voltar">
+                        <a href="Home.jsp">
                             <input class='btn btn-primary btn-block'  type="button" value="Cancelar">
                         </a>
                     </div>

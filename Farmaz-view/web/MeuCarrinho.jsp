@@ -36,6 +36,8 @@
 
         <!-- Main Stylesheet File -->
         <link href="css/style.css" rel="stylesheet">
+        
+        <script type="text/javascript" language="JavaScript" src="js/script.js"></script>
 
         <!-- =======================================================
           Template Name: Spot
