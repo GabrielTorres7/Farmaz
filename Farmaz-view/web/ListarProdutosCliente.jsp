@@ -76,7 +76,7 @@
                                             <% if (produto.isReceita() == true) {
                                                     out.print("Necessário receita médica");
                                                 } else {
-                                                    out.print("Não precisa receita médica");
+                                                    out.print("");
                                                 }
                                             %>
                                         </small>

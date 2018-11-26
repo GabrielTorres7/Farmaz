@@ -49,40 +49,49 @@
         ======================================================= -->
     </head>
     <body>
+        <div id="blue">
+            <div class="container">
+                <div class="row centered">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <h1>Nós listamos as farmácias com base em seu endereço,</h1>
+                        <h2>Escolha a que melhor te atende</h2>
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+        </div>
         <script src="http://maps.google.com/maps/api/js?key=AIzaSyBpCmWwIrHcvRWQ6loUb5NLB9_EQaEHzUo"></script>
-        <div class="container">   
-            <h3>Lista de Farmácias - Selecione pelo nome</h3>
-
+        <div class="container" style="padding:30px;">   
             <form name="frmFarmacia" method='post' action='/ServletWeb'>
                 <input type='hidden' name='acao' value=''>
                 <input type='hidden' name='cod' value=''>
                 <input type='hidden' name='table' value='Farmacia'>
                 <table class="table table-striped"> 
                     <tr>
-                        <td>
+                        <th>
                             Nome
-                        </td>
-                        <td>
-                            Cnpj
-                        </td>
-                        <td>
-                            Bairro
-                        </td>
-                        <td>
-                            Rua
-                        </td>
-                        <td>
-                            Número
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Preço
-                        </td>
-                        <td>
+                        </th>
+                        <th>
+                            Bairro
+                        </th>
+                        <th>
+                            Rua
+                        </th>
+                        <th>
+                            Número
+                        </th>
+                        <th>
                             Distância
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Tempo estimado de entrega
-                        </td>
+                        </th>
+                        <th>
+                            CNPJ
+                        </th>
                     </tr>
                     <%
                         List<Farmacia> listFarmacia = (List<Farmacia>) request.getAttribute("farmacias");
@@ -102,7 +111,7 @@
                                     <a href="/Farmaz-view/ServletWeb?acao=MostrarMapa&DisponibilidadeId=<%=listDisponibilidade.get(i).getId()%>"><%=farmacia.getNome()%>
                                 </td>
                                 <td>
-                                    <%=farmacia.getCnpj()%>
+                                    <%=listDisponibilidade.get(i).getPreco()%>   
                                 </td>
                                 <td>
                                     <%=farmacia.getBairro()%>
@@ -113,14 +122,14 @@
                                 <td>
                                     <%=farmacia.getNumero()%>
                                 </td>
-                                <td>
-                                    <%=listDisponibilidade.get(i).getPreco()%>                                    
-                                </td>
-                                 <td>
+                                <td>  
                                     <div><span id='<%="distancia"+i%>'>&nbsp;</span></div>
                                 </td>
                                  <td>
-                                    <div><span id='<%="tempo"+i%>'>&nbsp;</span></div>                                    
+                                    <div><span id='<%="tempo"+i%>'>&nbsp;</span></div>
+                                </td>
+                                 <td>
+                                      <%=farmacia.getCnpj()%>                                  
                                 </td>
                             </tr>
                     <%  } %>
@@ -170,5 +179,7 @@
                     }  
             }
         </script>
+        <!-- FOOTER -->
+        <jsp:include page ="Rodape.jsp"/> 
     </body>
 </html>

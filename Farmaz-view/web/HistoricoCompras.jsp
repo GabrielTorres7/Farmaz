@@ -50,32 +50,40 @@
 
     </head>
     <body>
-         <div class="container">   
-            <center>
-                <h3>Histórico de Pedidos</h3>
-            </center>
-            
+         <div id="blue">
+            <div class="container">
+                <div class="row centered">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <h1>Você comprou todos esses produtos,</h1>
+                        <h2>Veja aqui no Histórico de compras</h2>
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+        </div>  
+         <div class="container" style="padding:40px;">   
+         
             <form name="frmHistorico" method='post' action='ServletWeb' class="form-horizontal">
                 <input type='hidden' name='table' value='Historico'>
                 <input type='hidden' name='acao' value=''>
                 <input type='hidden' name='cod' value=''>
                 <table class="table table-striped"> 
                     <tr>
-                        <td>
+                        <th>
                             Farmácia
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Data
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Satus do pedido
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Valor
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             &nbsp
-                        </td>
+                        </th>
                     </tr>
                     <%
                         List<Pedido> historico = (List<Pedido>) request.getAttribute("Historico");
@@ -121,7 +129,7 @@
                             
                 <div class="form-group">
                     <div class="col-sm-10">
-                        <input class='btn btn-success' type="submit" value="Voltar" onclick="SetAcao('Voltar',document.frmHistorico)">
+                        <input class='btn btn-primary btn-block' style="width:100px;"type="submit" value="Voltar" onclick="SetAcao('Voltar',document.frmHistorico)">
                     </div>
                 </div>    
             </form>

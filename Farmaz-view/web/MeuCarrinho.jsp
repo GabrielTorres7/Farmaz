@@ -51,7 +51,7 @@
         <div id="blue">
             <div class="container">
                 <div class="row centered">
-                    <div class="col-lg-9 col-lg-offset-2">
+                    <div class="col-lg-10 col-lg-offset-1">
                         <h1>Todos os produtos selecionados aparecem aqui, no</h1>
                         <h2>Carrinho de compras</h2>
                     </div>
@@ -60,7 +60,7 @@
             </div>
             </div>
         <div class="container">              
-            <form name="frmCarrinho" method='post' action='ServletWeb' class="form-horizontal">
+            <form name="frmCarrinho" method='post' action='ServletWeb' class="form-horizontal" style="padding:40px">
                 <input type='hidden' name='table' value='MeuCarrinho'>
                 <input type="hidden" name="ultimoJsp" value="Carrinho">
                 <input type='hidden' name='acao' value=''>
@@ -71,21 +71,21 @@
                     %>
                 <table class="table table-striped"> 
                     <tr>
-                        <td>
+                        <th>
                             Nome
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Farmácia
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Quantidade
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Preço
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             &nbsp
-                        </td>
+                        </th>
                     </tr>
                     <%
                         Double total = 0.0;
@@ -129,13 +129,13 @@
                 </table>
                 <div class="form-group">
                     <div class="col-sm-4">
-                        <p>Valor total: <%=total%></p>
+                        <h3>Valor total: <b> <%=total%> </b></h3>
                     </div>
                 </div>
                 
                 <div class="form-group">
-                    <div class="col-sm-10">
-                        <input class='btn btn-primary' type="submit" value="Finalizar Compra" onclick="SetAcao('FinalizarCompra',document.frmCarrinho)">
+                    <div class="col-lg-10 col-lg-offset-1" style="padding: 40px;">
+                        <input class='btn btn-primary btn-block' type="submit" value="Finalizar Compra" onclick="SetAcao('FinalizarCompra',document.frmCarrinho)">
                     </div>
                 </div>
                 <% }else{%>
