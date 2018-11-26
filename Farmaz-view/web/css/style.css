@@ -26,14 +26,65 @@ body {
     margin-top: 70px;
 }
 
+.thumbnail{
+    background-color: #f2f2f2;
+     border: none;
+}
+
 .btn.btn-primary.btn-block{
-    background: #1474C0;
+    background-image: linear-gradient(to top, #1474C0, #2a628b );
     height: 50px; 
     font-size: 1.30em;
     font-weight: bold;
     font-family: "Lato";
     letter-spacing: 3px;
     box-shadow: 0px 4px 0px 0px #13517F;
+}
+
+.btn.btn-sucess.btn-block{
+    background-image: linear-gradient(to bottom, #943E3C, #E65454 );
+    height: 50px;
+    font-size: 1.30em;
+    font-weight: bold;
+    color: white;
+    font-family: "Lato";
+    letter-spacing: 3px;
+    box-shadow: 0px 4px 0px 0px #a13a3a;
+
+}
+
+.table.table-striped td{
+    border-left: 2px solid #eaeaea;
+    border-right: 2px solid #eaeaea;
+    border-top: 2px solid #eaeaea;
+    border-bottom: 2px solid #eaeaea;
+    
+}
+.table.table-striped th{
+background-image: linear-gradient(to bottom, #e65354, #eb7676);
+    border-left: 2px solid #943e3c;
+    border-right: 2px solid #9e403f;
+    border-top: 2px solid #9e403f;
+    border-bottom: 2px solid #9a3f3e;
+    box-shadow: inset 2px 3px 0 #f36667;
+    color: #fff;
+    font-weight: bold;
+    font-size: 17px;
+    font-family: "Lato";
+    letter-spacing: 0.5px;
+    padding: 10px 15px;
+    position: relative;
+    text-shadow: 1px 1px #000;
+}
+
+.table.table-striped:hover td {
+	color: transparent;
+	text-shadow: 0 0 4px #aaa;
+}
+
+.table.table-striped:hover tr:hover td {
+	color: #444;
+	text-shadow: 0 1px 0 #fff;
 }
 
 /* Titles */
