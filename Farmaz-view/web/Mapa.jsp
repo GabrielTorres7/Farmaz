@@ -9,12 +9,37 @@
 <html>
     <jsp:include page ="MenuCliente.jsp"/>
     <head>
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="css/estilo.css" rel="stylesheet" type="text/css">
-	<title>Farmaz</title>
+        <meta charset="utf-8">
+        <title>Farmaz</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        
+        <!-- Favicons -->
+        <link href="images/icone.png" rel="icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,700,900" rel="stylesheet">
+
+        <!-- Bootstrap CSS File -->
+        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Libraries CSS Files -->
+        <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+        <!-- Main Stylesheet File -->
+        <link href="css/style.css" rel="stylesheet">
         
         <script type="text/javascript" language="JavaScript" src="js/script.js"></script>
-        <script src="js/jquery.js" type="text/javascript"></script>
+
+        <!-- =======================================================
+          Template Name: Spot
+          Template URL: https://templatemag.com/spot-bootstrap-freelance-template/
+          Author: TemplateMag.com
+          License: https://templatemag.com/license/
+        ======================================================= -->
+        
         <script src="http://maps.google.com/maps/api/js?key=AIzaSyBpCmWwIrHcvRWQ6loUb5NLB9_EQaEHzUo"></script>
     </head>
     <body>

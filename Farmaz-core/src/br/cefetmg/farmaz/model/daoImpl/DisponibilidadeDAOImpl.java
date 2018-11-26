@@ -138,7 +138,7 @@ public class DisponibilidadeDAOImpl implements DisponibilidadeDAO{
          try {
             Connection connection = ManterConexao.getInstance().getConnection();
 
-            String sql = "SELECT * FROM disponibilidade WHERE seq_disponibilidade = ? ";
+            String sql = "SELECT * FROM disponibilidade WHERE seq_disponibilidade = ? ORDER BY preco";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setLong(1, disponibilidadeId);
@@ -171,7 +171,7 @@ public class DisponibilidadeDAOImpl implements DisponibilidadeDAO{
          try {
             Connection connection = ManterConexao.getInstance().getConnection();
 
-            String sql = "SELECT * FROM disponibilidade WHERE seq_produto = ?";            
+            String sql = "SELECT * FROM disponibilidade WHERE seq_produto = ? ORDER BY preco";            
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setLong(1, produtoId);
@@ -211,7 +211,7 @@ public class DisponibilidadeDAOImpl implements DisponibilidadeDAO{
         try {
             Connection connection = ManterConexao.getInstance().getConnection();
 
-            String sql = "SELECT * FROM disponibilidade WHERE cadastro_prefeitura = ?";            
+            String sql = "SELECT * FROM disponibilidade WHERE cadastro_prefeitura = ? ORDER BY preco";            
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setString(1, farmaciaId);
