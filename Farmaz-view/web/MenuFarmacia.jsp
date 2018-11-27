@@ -87,18 +87,17 @@
                         <p>Farmaz é um aplicativo que fornece ao usuário uma maneira de suprir
                             sua demanda por produtos farmacêuticos de forma rápida e prática, 
                             através da conexão direta entre cliente e estabelecimento.<br>
-                            Além disso, o Farmaz permite que você veja e compare
-                            os melhores preços e rotas de entrega, se adequando a sua necessidade</p>
+                            Além disso, o Farmaz permite que você atinja uma maior quantidade
+                            de pessoas, aumentando sua produtividade como empresa.</p>
 
-                        <h3><b>Quais produtos posso comprar através do Farmaz?</b> </h3>
-                        <p> No Farmaz é possivel encontrar produtos comuns de se encontrar em farmácias,
+                        <h3><b>Quais produtos posso vender através do Farmaz?</b> </h3>
+                        <p> No Farmaz é possivel anunciar produtos comuns de se encontrar em farmácias,
                             como por exemplo : Medicamentos e remédios, produtos de beleza, nutrição, higiene
                             pessoal, entre diversas outras opções.
                         </p>
-                        <h3><b>Qual o prazo de entrega?</b> </h3>
-                        <p> O prazo de entrega vai variar de acordo com alguns fatores como a
-                            distância entre seu local e o estabelecimento comercial,transito, entre outros.
-                            O Farmaz disponibiliza um cálculo aproximado ao realizar a compra.
+                        <h3><b>É necessario possuir um estabelecimento físico para os clientes?</b> </h3>
+                        <p> Uma vez que o Farmaz é uma plataforma de pedidos online, não é necessário um estabelecimento
+                            físico, mas sim um serviço de entrega a domicílio.
                         </p>
                         <h3><b>Quais formas de pagamento são aceitas?</b> </h3>
                         <p> São aceitas transações em dinheiro pagas diretamente ao entregador e cartões
