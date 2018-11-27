@@ -54,7 +54,9 @@
                         <span class="icon-bar"></span>
                     </button>
                     
-                    <a class="navbar-brand" href="/Farmaz-view/ServletWeb?acao=ListarProdutosFarmacia" style="padding-top: 10px;font-size: 33px;">Farmaz</a>                 
+                    <a href="/Farmaz-view/ServletWeb?acao=ListarProdutosFarmacia">
+                            <img title="Farmaz" class="image-wrapper" src="images/Farmaz_BRANCO.png" class="img-responsive"  width="40%">
+                    </a>              
                 </div>
                 
                 <div class="navbar-collapse collapse" id="movelMenu">

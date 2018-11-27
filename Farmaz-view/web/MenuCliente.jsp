@@ -42,7 +42,7 @@
         <!-- Fixed navbar -->
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
-                <div class="navbar-header">
+                <div class="navbar-header" style="width:400px;padding-top:5px;">
                     <button type="button" 
                         class="navbar-toggle collapsed"
                         data-toggle="collapse"
@@ -55,7 +55,9 @@
                         <span class="icon-bar"></span>
                     </button>
                     
-                    <a class="navbar-brand" href="/Farmaz-view/ServletWeb?acao=Voltar" style="padding-top: 10px;font-size: 33px;">Farmaz</a>                 
+                   <a href="/Farmaz-view/ServletWeb?acao=Voltar">
+                            <img title="Farmaz" class="image-wrapper" src="images/Farmaz_BRANCO.png" class="img-responsive"  width="40%">
+                    </a>                 
                 </div>
                 
                 <div class="navbar-collapse collapse" id="movelMenu">
