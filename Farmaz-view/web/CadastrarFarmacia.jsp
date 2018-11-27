@@ -21,7 +21,10 @@
 
     <!-- Title Page-->
     <title>Farmaz</title>
-
+    
+    <!-- Favicons -->
+        <link href="images/Farmaz_PILULA.png" rel="icon">
+        
     <!-- Font special for pages-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 
@@ -139,7 +142,7 @@
                     </div>
                 </div>
                         
-                <input type="hidden" name="acao" id="acao" value="CadastraCliente">
+                <input type="hidden" name="acao" id="acao" value="CadastraFarmacia">
 
                 <div class="form-group">
                     <div class="col-xs-9 col-sm-offset-2" style="padding-top: 10px;">

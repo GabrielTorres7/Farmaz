@@ -24,7 +24,7 @@
         <meta content="" name="description">
 
         <!-- Favicons -->
-        <link href="images/icone.png" rel="icon">
+        <link href="images/Farmaz_PILULA.png" rel="icon">
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,700,900" rel="stylesheet">
@@ -48,10 +48,19 @@
         ======================================================= -->
     </head>
     <body>
-         <div class="container">   
-            <center>
-                <h3>Histórico de Pedidos Concluidos</h3>
-            </center>
+        <div id="blue">
+            <div class="container">
+                <div class="row centered">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <h1>Você já concluiu todos esses pedidos,</h1>
+                        <h2>Veja aqui no Histórico de vendas</h2>
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+        </div>
+        
+         <div class="container" style="padding:40px;">
             
             <form name="frmHistorico" method='post' action='ServletWeb' class="form-horizontal">
                 <input type='hidden' name='table' value='Historico'>
@@ -61,21 +70,21 @@
                     if(historico != null){ %>
                 <table class="table table-striped"> 
                     <tr>
-                        <td>
+                        <th>
                             Cliente
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Data
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Satus do pedido
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Valor
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             &nbsp
-                        </td>
+                        </th>
                     </tr>
                     <%
                         

@@ -51,10 +51,16 @@ public class ListarFarmacias {
                 }
             }
             
+            List<Farmacia> listFinal = new ArrayList();
             //Somente farmácias que estão na mesma cidade do cliente
             for(int i=0; i<listFarmacia.size(); i++){
-                if(!Objects.equals(listFarmacia.get(i).getCodCidade(), endereco.getCodUf())){
-                    listFarmacia.remove(listFarmacia.get(i));
+                if((Objects.equals(listFarmacia.get(i).getCodCidade(), endereco.getCodCidade()))){
+                    listFinal.add(listFarmacia.get(i));
+                }
+            }
+            for(int i=0; i<listFinal.size(); i++){
+                if(!listDisponibilidade.get(i).getFarmaciaCadastro().equals(listFinal.get(i).getCadastroPrefeitura())){
+                    listDisponibilidade.remove(listDisponibilidade.get(i));
                 }
             }
             
@@ -62,7 +68,7 @@ public class ListarFarmacias {
                     +", "+manterCidade.getCidadeById(endereco.getCodCidade()).getNome()+" - "+manterEstado.getEstadoById(endereco.getCodUf()).getSigla();
             
             request.setAttribute("enderecoCliente", enderecoCliente);
-            request.setAttribute("farmacias", listFarmacia);
+            request.setAttribute("farmacias", listFinal);
             request.setAttribute("disponibilidade", listDisponibilidade);
             
             jsp = "ListarFarmacias.jsp";

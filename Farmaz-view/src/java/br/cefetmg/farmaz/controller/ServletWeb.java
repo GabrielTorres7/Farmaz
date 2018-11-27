@@ -74,6 +74,8 @@ public class ServletWeb extends HttpServlet {
             jsp = AlterarStatusPedido.executa(request);
         else if(acao.equals("HistoricoVendas"))
             jsp = HistoricoVendas.executa(request);
+        else if(acao.equals("PesquisaProduto"))
+            jsp = PesquisaProduto.executa(request);
         
             RequestDispatcher rd = request.getRequestDispatcher(jsp);
             rd.forward(request, response);  

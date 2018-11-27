@@ -13,22 +13,14 @@
 <html>
     <jsp:include page ="MenuFarmacia.jsp"/>
     <head>
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="css/estilo.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-        <style>
-            body{
-                font-family: 'Raleway', sans-serif;
-            }
-        </style>
-        <meta charset="utf-8">
+       <meta charset="utf-8">
         <title>Farmaz</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
 
         <!-- Favicons -->
-        <link href="images/icone.png" rel="icon">
+        <link href="images/Farmaz_PILULA.png" rel="icon">
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,700,900" rel="stylesheet">
@@ -51,12 +43,19 @@
 
     </head>
     <body>
-        <div class="container">
-                   
-            <center>
-                <h2>Cadastrar produto</h2>
-            </center>
-         
+        <div id="blue">
+            <div class="container">
+                <div class="row centered">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <h2>Cadastrar produto</h2>
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+        </div>
+        
+        <div class="container" style="padding:40px;">
+            
             <form action="ServletWeb" method="post" class="form-horizontal">
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="nome">Nome do produto</label>
@@ -68,8 +67,8 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label"  for="receita">Possui receita?</label>
                     <div class="col-xs-9">    
-                        <input class="form-control" type="radio" name="receita" value="sim">Sim<br>
-                        <input class="form-control" type="radio" name="receita" value="nao">Não
+                        <input class="radio-inline" type="radio" name="receita" value="sim">Sim<br>
+                        <input class="radio-inline" type="radio" name="receita" value="nao">Não
                     </div>
                 </div>
                 

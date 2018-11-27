@@ -26,7 +26,7 @@
 
         
         <!-- Favicons -->
-        <link href="images/icone.png" rel="icon">
+        <link href="images/Farmaz_PILULA.png" rel="icon">
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,700,900" rel="stylesheet">
@@ -50,16 +50,26 @@
         ======================================================= -->
     </head>
     <body>
+        <div id="blue">
+            <div class="container">
+                <div class="row centered">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <h1>Os pedidos que estão em andamento,</h1>
+                        <h2>Veja aqui no Gerenciador de Pedidos</h2>
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+        </div>
+        
         <script>
             function SetCodigo(cod, frm) {  
                 frm.cod.value = cod.toString();
                 frm.submit();
             }
         </script>
-         <div class="container">   
-            <center>
-                <h3>Gerenciar Pedidos</h3>
-            </center>
+         <div class="container" style="padding:40px;">  
+             
             <form name="frmPedidos" method='post' action='ServletWeb' class="form-horizontal">
                 <input type='hidden' name='table' value='Pedidos'>
                 <input type='hidden' name='acao' value='AlterarStatusPedido'>
@@ -69,33 +79,33 @@
                 if(listPedido != null){ %>
                 <table class="table table-striped"> 
                     <tr>
-                        <td>
+                        <th>
                             Cliente
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Data
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Satus do pedido
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Valor
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Troco
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Rua
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Número
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Bairro
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             &nbsp
-                        </td>
+                        </th>
                     </tr>
                     <%
                         ManterClienteProxy manterCliente = new ManterClienteProxy();
@@ -174,10 +184,10 @@
                     </table>
                     
                 <div class="form-group">
-                    <div class="col-sm-10">
-                        <input class='btn btn-success' type="submit" value="Voltar" onclick="SetAcao('ListarProdutosFarmacia',document.frmPedidos)">
+                    <div class="col-lg-10 col-lg-offset-1" style="padding: 40px;">
+                        <input class='btn btn-primary btn-block' type="submit" value="Voltar" onclick="SetAcao('ListarProdutosFarmacia',document.frmPedidos)">
                     </div>
-                </div>    
+                </div>   
             </form>
         </div>
         

@@ -21,7 +21,7 @@
 
         
         <!-- Favicons -->
-        <link href="images/icone.png" rel="icon">
+        <link href="images/Farmaz_PILULA.png" rel="icon">
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,700,900" rel="stylesheet">
@@ -79,7 +79,7 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="documento">Documento de identificação</label>
                     <div class="col-xs-9">
-                        <input class="form-control" type="text" name="documento" id="documento"  required>
+                        <input class="form-control" type="text" name="documento_identificacao" id="documento_identificacao"  required>
                     </div>
                 </div>
                 
@@ -91,7 +91,7 @@
                 </div>
                 
                     <div class="form-group">
-                    <label class="col-sm-2 control-label" for="senhaAtual">Senhal</label>
+                    <label class="col-sm-2 control-label" for="senhaAtual">Senha</label>
                     <div class="col-xs-9">
                         <input class="form-control" type="password" name="senha" id="senha" required>
                     </div>

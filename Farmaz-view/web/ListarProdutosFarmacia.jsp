@@ -22,7 +22,7 @@
         <meta content="" name="description">
 
         <!-- Favicons -->
-        <link href="images/icone.png" rel="icon">
+        <link href="images/Farmaz_PILULA.png" rel="icon">
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,700,900" rel="stylesheet">
@@ -44,11 +44,25 @@
         ======================================================= -->
     </head>
     <body>
-        <div class="container">   
-            <% ManterFarmaciaProxy manterFarmacia = new ManterFarmaciaProxy();%>
-            <h3>Lista de Produtos - <%=manterFarmacia.getFarmaciaById(((String) request.getSession().getAttribute("cod_farmacia"))).getNome()%></h3>
-
-            <a href='InserirProduto.jsp'>Novo Produto</a>
+        <% ManterFarmaciaProxy manterFarmacia = new ManterFarmaciaProxy();%>
+        <div id="blue">
+            <div class="container">
+                <div class="row centered">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <h1>Gerencie seus produtos,</h1>
+                        <h2><%=manterFarmacia.getFarmaciaById(((String) request.getSession().getAttribute("cod_farmacia"))).getNome()%></h2>
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+        </div>
+        
+        <div class="container">
+             <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-1" style="padding: 40px;">
+                    <input class='btn btn-primary btn-block' type="submit" value="Novo Produto" onclick="location.href='InserirProduto.jsp'">
+                </div>
+            </div>
 
             <form name="frmProduto" method='post' action='/ServletWeb'>
                 <input type='hidden' name='acao' value=''>
@@ -60,27 +74,27 @@
                     if (listProduto != null) { %>
                 <table class="table table-striped"> 
                     <tr class="info">
-                        <td>
+                        <th>
                             Nome
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Receita
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Descricao
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Laboratorio
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Cadastro da Anvisa
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Estoque
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             Preço
-                        </td>
+                        </th>
                     </tr>
                     <%
 
@@ -130,6 +144,7 @@
                 </table>
                 <%
                     } else {%>   
+                    <br><br><br><br><br>
                 <div>
                     <h2>Voce ainda não cadastrou nenhum produto!</h2>
                 </div>

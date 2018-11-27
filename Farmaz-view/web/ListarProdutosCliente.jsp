@@ -18,7 +18,7 @@
         <meta content="" name="description">
 
         <!-- Favicons -->
-        <link href="images/icone.png" rel="icon">
+        <link href="images/Farmaz_PILULA.png" rel="icon">
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,700,900" rel="stylesheet">
@@ -58,15 +58,17 @@
             <div class="container">
                 <div class="row centered" >
                     <form action="ServletWeb" method="post" class="form-horizontal">
+                        <input type='hidden' name='acao' value='PesquisaProduto'>
                         <div class="form-group" style="padding-bottom: 30px">
                              <label class="col-sm-2 control-label" for="nome"></label>
                             <div class="col-lg-8">
-                                <input class="form-control" title="Pesquise por nome do produto" type="text" name="pesquisa" placeholder="Pesquise o produto" required
+                                <input class="form-control" title="Pesquise por nome do produto" type="text" name="pesquisa" placeholder="Pesquise o produto"
                                        style="
                                                 height: 50px;
                                                 font-size: 20px;
                                                 box-shadow: 7px 5px 20px #acaaaa;">
                             </div>
+                             <input type='submit' hidden="true" value='PesquisaProduto'>
                         </div>
                     </form>
                 </div>
