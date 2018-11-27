@@ -66,33 +66,33 @@
                 <!-- col-lg-3 -->
 
                 <div class="col-lg-3" style="flex: 1;">
-                    <img class="img-circle"  src="images/bg.jpg" width="110" height="110" alt="">
+                    <img class="img-circle"  src="images/perfil2.png" width="110" height="110" alt="">
                     <h4>Arthur Codama</h4>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+                    <p>Eu sou fofo. As vezes finjo ser desenvolvedor Back-end e melhor tracer de inf.</p>
                     <p><a href="https://github.com/ArthurCodama">@ArthurCodama</a></p>
                 </div>
                 <!-- col-lg-3 -->
 
                 <div class="col-lg-3" style="flex: 1;">
-                    <img class="img-circle"  src="images/bg.jpg" width="110" height="110" alt="">
+                    <img class="img-circle"  src="images/perfil3.png" width="110" height="110" alt="">
                     <h4>Gabriel Torres</h4>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+                    <p>Apaixonado por tecnologia, desenvolvimento e futebol</p>
                     <p><a href="https://github.com/GabrielTorres7">@GabrielTorres7</a></p>
                 </div>
                 <!-- col-lg-3 -->
 
                 <div class="col-lg-3" style="flex: 1;">
-                    <img class="img-circle"  src="images/bg.jpg" width="110" height="110" alt="">
+                    <img class="img-circle"  src="images/perfil4.png" width="110" height="110" alt="">
                     <h4>Hiago Martins</h4>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+                    <p>Desenvolvedor full stack, jogador casual de videogames e admirador de culinária e gastronomia</p>
                     <p><a href="https://github.com/Hiagozeroum">@Hiagozeroum</a></p>
                 </div>
                 <!-- col-lg-3 -->
                 
                 <div class="col-lg-3" style="flex: 1;">
-                    <img class="img-circle"  src="images/bg.jpg" width="110" height="110" alt="">
+                    <img class="img-circle"  src="images/perfil5.png" width="110" height="110" alt="">
                     <h4>Pedro Henrique</h4>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+                    <p>Programador back-end que prefere ler sobre política/economia e sonha, todo dia, em nunca mais encostar em uma IDE.</p>
                     <p><a href="https://github.com/PedroHenriqueV">@PedroHenriqueV</a></p>
                 </div>
                 <!-- col-lg-3 -->
