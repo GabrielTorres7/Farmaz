@@ -41,15 +41,39 @@
 
     </head>
     <body>
+        <div id="blue">
+            <div class="container">
+                <div class="row centered">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <h1>Selecione o produto,</h1>
+                        <h2>que nós procuraremos as melhores ofertas para você</h2>
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+        </div>
+
         <!-- PRICING SECTION -->
         <div id="dg">
             <div class="container">
+                <div class="row centered" >
+                    <form action="ServletWeb" method="post" class="form-horizontal">
+                        <div class="form-group" style="padding-bottom: 30px">
+                             <label class="col-sm-2 control-label" for="nome"></label>
+                            <div class="col-lg-8">
+                                <input class="form-control" title="Pesquise por nome do produto" type="text" name="pesquisa" placeholder="Pesquise o produto" required
+                                       style="
+                                                height: 50px;
+                                                font-size: 20px;
+                                                box-shadow: 7px 5px 20px #acaaaa;">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <br>
+                <div class="row centered" style="display: -webkit-  flex; display: -ms-flexbox; display: flex; overflow: hidden;">
+                    
 
-                
-                    <h1><b>Selecione o produto</b>,</h1>
-                    <h2>que nós procuraremos as melhores ofertas próximas de você</h2>
-                    <br>
-                    <div class="row centered" style="display: -webkit-  flex; display: -ms-flexbox; display: flex; overflow: hidden;">
                     <form name="frmProduto" method='post' action='/ServletWeb'>
                         <!-- GAMBS DO TORRES -->
                         <input type='hidden' name='acao' value=''>
